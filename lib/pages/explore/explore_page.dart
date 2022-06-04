@@ -121,14 +121,18 @@ class _ExplorePageState extends State<ExplorePage>
           ),
         ),
       ),
-      body: Padding(
-        padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
+      body: Container(
+        padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
+        margin: EdgeInsets.only(left: 10, right: 10),
         child: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: Column(
             children: [
               Row(
                 children: [
+                  SizedBox(
+                    width: 15,
+                  ),
                   CustomDropDown(title: 'Kategori'),
                   const SizedBox(width: 10.0),
                   CustomDropDown(title: 'Lokasi'),
@@ -159,13 +163,18 @@ class _ExplorePageState extends State<ExplorePage>
               const SizedBox(height: 10.0),
               // list of store
               ShopThreeProducts(storeModel: listOfStore[0]),
+              SizedBox(
+                height: 7,
+              ),
 
               ShopThreeProducts(storeModel: listOfStore[1]),
-
+              SizedBox(
+                height: 7,
+              ),
               ShopThreeProducts(storeModel: listOfStore[2]),
 
               SizedBox(
-                height: 10,
+                height: 20,
               )
             ],
           ),

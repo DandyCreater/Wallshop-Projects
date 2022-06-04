@@ -13,19 +13,20 @@ class ShopThreeProducts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 5.0),
-      padding: const EdgeInsets.all(11.0),
-      width: double.infinity,
+      margin: const EdgeInsets.only(top: 5.0, bottom: 5.0),
+      padding: EdgeInsets.only(left: 11.0, top: 11.0, bottom: 11.0),
+      width: 361.0,
       height: 230.0,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(8),
         boxShadow: [
           BoxShadow(
-            blurRadius: 40,
-            spreadRadius: 0,
+            blurRadius: 5,
+            spreadRadius: 3,
             color: Color(0xffEDEDED),
-            offset: Offset(0, 5),
+            // color: Color(0xffEDEDED),
+            offset: Offset(0, 3),
           ),
         ],
       ),
@@ -75,6 +76,7 @@ class ShopThreeProducts extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => StorePage()));
                 },
                 child: Container(
+                  margin: EdgeInsets.only(right: 10),
                   width: 100.0,
                   height: 40.0,
                   decoration: BoxDecoration(
@@ -118,7 +120,7 @@ class ShopThreeProducts extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                width: 9,
+                width: 5,
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -145,7 +147,7 @@ class ShopThreeProducts extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                width: 9,
+                width: 5,
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -170,6 +172,9 @@ class ShopThreeProducts extends StatelessWidget {
                     style: TextStyle(fontSize: 12.0),
                   )
                 ],
+              ),
+              SizedBox(
+                width: 5,
               ),
             ],
           ),
