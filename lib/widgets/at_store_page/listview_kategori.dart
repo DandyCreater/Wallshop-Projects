@@ -15,6 +15,7 @@ class ListViewKategori extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         Row(
+          // mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Container(
               height: 57,
@@ -29,14 +30,36 @@ class ListViewKategori extends StatelessWidget {
             SizedBox(width: 18),
             Container(
               height: 57,
-              child: Center(
-                child: Text(
-                  categoryStoreModel.title,
-                  style: GoogleFonts.poppins(
-                      fontSize: 14,
-                      color: Color(0xff3F3F3F),
-                      fontWeight: FontWeight.w600),
-                ),
+              width: 220,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    categoryStoreModel.title,
+                    style: GoogleFonts.poppins(
+                        fontSize: 14,
+                        color: Color(0xff3F3F3F),
+                        fontWeight: FontWeight.w600),
+                  ),
+                  Text(
+                    categoryStoreModel.jumlah + " produk",
+                    style: GoogleFonts.poppins(
+                        fontSize: 10,
+                        color: Color(0xff63767E),
+                        fontWeight: FontWeight.w400),
+                  ),
+                ],
+              ),
+            ),
+            // SizedBox(
+            //   width: 200,
+            // ),
+            Expanded(
+              child: Container(
+                height: 10,
+                width: 6,
+                child: Icon(Icons.keyboard_arrow_right),
               ),
             )
           ],

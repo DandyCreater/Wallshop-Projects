@@ -25,20 +25,6 @@ class _ExplorePageState extends State<ExplorePage>
 
   @override
   Widget build(BuildContext context) {
-    Widget _createTab(String text) {
-      return Tab(
-        child: Container(
-          decoration: BoxDecoration(
-              border: Border(bottom: BorderSide(color: Colors.black))),
-          child: Row(
-              // crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Expanded(child: Center(child: Text(text))),
-              ]),
-        ),
-      );
-    }
-
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -83,7 +69,7 @@ class _ExplorePageState extends State<ExplorePage>
           // const SizedBox(width: 30.0),
           IconButton(
             onPressed: () {},
-            padding: const EdgeInsets.only(right: 20.0),
+            padding: const EdgeInsets.only(right: 40.0),
             icon: Icon(
               Icons.shopping_cart_outlined,
               color: Colors.black,

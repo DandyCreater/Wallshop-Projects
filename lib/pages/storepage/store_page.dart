@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:md2_tab_indicator/md2_tab_indicator.dart';
 import 'package:slicing_homepage/models/category_store_model.dart';
 import 'package:slicing_homepage/models/product_store_model.dart';
+import 'package:slicing_homepage/pages/storepage/produk_store_page.dart';
 import 'package:slicing_homepage/widgets/at_store_page/listview_kategori.dart';
 import 'package:slicing_homepage/widgets/at_store_page/listview_semuaproduk.dart';
 import 'package:slicing_homepage/widgets/at_store_page/listview_store_page.dart';
@@ -26,6 +27,7 @@ class _StorePageState extends State<StorePage>
 
   //Widget Produk.
   Widget Produk() => Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
             height: 30,
@@ -232,9 +234,10 @@ class _StorePageState extends State<StorePage>
   Widget Content() => Column(
         children: [
           SizedBox(
-            height: 100,
+            height: 20,
           ),
           Container(
+            // color: Colors.white,
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -445,30 +448,37 @@ class _StorePageState extends State<StorePage>
   //End Of WidgetContent
 
   //Widget Kategori
-  Widget Kategori() => Container(
-        padding: EdgeInsets.only(left: 20),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          SizedBox(
-            height: 20,
-          ),
-          Text(
-            "Semua Kategori",
-            style: GoogleFonts.poppins(
-                fontSize: 17,
-                fontWeight: FontWeight.w600,
-                color: Color(0xff3F3F3F)),
-          ),
-          Container(
-            height: 800,
-            child: ListView.builder(
-                // scrollDirection: Axis.vertical,
-                itemCount: kategoriStoreModel.length,
-                itemBuilder: ((context, index) {
-                  return ListViewKategori(
-                      categoryStoreModel: kategoriStoreModel[index]);
-                })),
-          )
-        ]),
+  Widget Kategori() => InkWell(
+        onTap: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => ProdukStorePage()));
+        },
+        child: Container(
+          padding: EdgeInsets.only(left: 20),
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            SizedBox(
+              height: 20,
+            ),
+            Text(
+              "Semua Kategori",
+              style: GoogleFonts.poppins(
+                  fontSize: 17,
+                  fontWeight: FontWeight.w600,
+                  color: Color(0xff3F3F3F)),
+            ),
+            Container(
+              height: 800,
+              child: ListView.builder(
+                  // scrollDirection: Axis.vertical,
+                  itemCount: kategoriStoreModel.length,
+                  itemBuilder: ((context, index) {
+                    return ListViewKategori(
+                        categoryStoreModel: kategoriStoreModel[index]);
+                  })),
+            )
+          ]),
+        ),
       );
 
   @override
@@ -480,9 +490,11 @@ class _StorePageState extends State<StorePage>
           return <Widget>[
             SliverAppBar(
               pinned: true,
-              // floating: true,
+              floating: false,
               leadingWidth: 40,
               centerTitle: false,
+              // snap: true,
+
               backgroundColor: Colors.white,
               elevation: 0,
               leading: IconButton(
@@ -494,9 +506,12 @@ class _StorePageState extends State<StorePage>
               ),
               expandedHeight: 370.0,
 
-              flexibleSpace: FlexibleSpaceBar(
-                collapseMode: CollapseMode.pin,
-                background: Content(),
+              flexibleSpace: Container(
+                padding: EdgeInsets.only(top: 80),
+                child: FlexibleSpaceBar(
+                  collapseMode: CollapseMode.pin,
+                  background: Content(),
+                ),
               ),
               title: Container(
                 height: 40,
@@ -528,9 +543,10 @@ class _StorePageState extends State<StorePage>
               ),
               actions: [
                 // const SizedBox(width: 30.0),
+
                 IconButton(
                   onPressed: () {},
-                  padding: const EdgeInsets.only(right: 20.0),
+                  padding: const EdgeInsets.only(right: 40.0),
                   icon: Icon(
                     Icons.shopping_cart_outlined,
                     color: Colors.black,

@@ -67,6 +67,33 @@ List<ProductStore> listProductTerbaru = [
       discon: 29)
 ];
 
+List<ProductStore> listProductLainnya = [
+  ProductStore(
+      imageUrl: "assets/images/supreme.png",
+      name: "Supreme Cash Gun",
+      price: 1150000,
+      discPrice: 50000,
+      discon: 29),
+  ProductStore(
+      imageUrl: "assets/images/shoes.png",
+      name: "Nike Air Versitile II",
+      price: 8000000,
+      discPrice: 50000,
+      discon: 29),
+  ProductStore(
+      imageUrl: "assets/images/tshirt.png",
+      name: "Tshirt Chicago Bulls",
+      price: 79000,
+      discPrice: 50000,
+      discon: 29),
+  ProductStore(
+      imageUrl: "assets/images/elon.png",
+      name: "Buku Elon Musk",
+      price: 70000,
+      discPrice: 50000,
+      discon: 29)
+];
+
 class SemuaProductModel {
   final String imageUrl;
   final String name;
