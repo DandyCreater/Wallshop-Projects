@@ -16,8 +16,8 @@ class ListViewSemuaProduk extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          height: 182,
-          width: 180,
+          height: MediaQuery.of(context).size.height * 0.2,
+          width: MediaQuery.of(context).size.width * 0.417,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               image: DecorationImage(
@@ -26,9 +26,11 @@ class ListViewSemuaProduk extends StatelessWidget {
         ),
         Container(
           padding: EdgeInsets.symmetric(vertical: 10, horizontal: 12),
-          margin: EdgeInsets.only(top: 145),
-          height: 142,
-          width: 180,
+          margin: EdgeInsets.only(
+            top: MediaQuery.of(context).size.height * 0.17,
+          ),
+          height: MediaQuery.of(context).size.height * 0.176,
+          width: MediaQuery.of(context).size.width * 0.417,
           decoration: BoxDecoration(
               boxShadow: [
                 BoxShadow(
@@ -137,8 +139,7 @@ class ListViewSemuaProduk extends StatelessWidget {
                   style: ButtonStyle(
                       shape: MaterialStateProperty.all(RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(5))),
-                      backgroundColor:
-                          MaterialStateProperty.all(Color(0xff04AC54))),
+                      backgroundColor: MaterialStateProperty.all(Colors.black)),
                   onPressed: semuaProductModel.press,
                   child: Container(
                     child: Text(

@@ -21,7 +21,7 @@ class CustomButtonStorePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 182,
+      width: 150,
       height: 40,
       child: TextButton(
           style: ButtonStyle(
@@ -31,7 +31,7 @@ class CustomButtonStorePage extends StatelessWidget {
               backgroundColor: MaterialStateProperty.all(bgBtnColor)),
           onPressed: () {},
           child: Text(
-            "Masukan Keranjang",
+            title,
             style: GoogleFonts.roboto(
                 fontSize: 11, color: colortitle, fontWeight: FontWeight.w500),
           )),

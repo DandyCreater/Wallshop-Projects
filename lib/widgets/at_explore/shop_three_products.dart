@@ -15,8 +15,8 @@ class ShopThreeProducts extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(top: 5.0, bottom: 5.0),
       padding: EdgeInsets.only(left: 11.0, top: 11.0, bottom: 11.0),
-      width: 361.0,
-      height: 230.0,
+      width: MediaQuery.of(context).size.width * 0.9,
+      height: MediaQuery.of(context).size.height * 0.28,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(8),
@@ -76,9 +76,11 @@ class ShopThreeProducts extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => StorePage()));
                 },
                 child: Container(
-                  margin: EdgeInsets.only(right: 10),
-                  width: 100.0,
-                  height: 40.0,
+                  margin: EdgeInsets.only(
+                    right: MediaQuery.of(context).size.width * 0.035,
+                  ),
+                  width: MediaQuery.of(context).size.width * 0.23,
+                  height: MediaQuery.of(context).size.height * 0.05,
                   decoration: BoxDecoration(
                     border: Border.all(width: 1, color: Colors.green.shade700),
                     borderRadius: BorderRadius.circular(10),
@@ -100,10 +102,8 @@ class ShopThreeProducts extends StatelessWidget {
                 children: [
                   Container(
                     margin: const EdgeInsets.symmetric(vertical: 20.0),
-                    // width: MediaQuery.of(context).size.width / 4,
-                    // height: 125.0,
-                    width: 110,
-                    height: 110,
+                    width: MediaQuery.of(context).size.width * 0.26,
+                    height: MediaQuery.of(context).size.height * 0.135,
                     decoration: BoxDecoration(
                       color: Colors.grey,
                       borderRadius: BorderRadius.circular(10.0),
@@ -119,18 +119,13 @@ class ShopThreeProducts extends StatelessWidget {
                   )
                 ],
               ),
-              SizedBox(
-                width: 5,
-              ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
                     margin: const EdgeInsets.symmetric(vertical: 20.0),
-                    width: 110,
-                    height: 110,
-                    // width: MediaQuery.of(context).size.width / 4,
-                    // height: 125.0,
+                    width: MediaQuery.of(context).size.width * 0.26,
+                    height: MediaQuery.of(context).size.height * 0.135,
                     decoration: BoxDecoration(
                       color: Colors.grey,
                       borderRadius: BorderRadius.circular(10.0),
@@ -146,18 +141,13 @@ class ShopThreeProducts extends StatelessWidget {
                   )
                 ],
               ),
-              SizedBox(
-                width: 5,
-              ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
                     margin: const EdgeInsets.symmetric(vertical: 20.0),
-                    // width: MediaQuery.of(context).size.width / 4,
-                    // height: 125.0,
-                    width: 110,
-                    height: 110,
+                    width: MediaQuery.of(context).size.width * 0.26,
+                    height: MediaQuery.of(context).size.height * 0.135,
                     decoration: BoxDecoration(
                       color: Colors.grey,
                       borderRadius: BorderRadius.circular(10.0),
@@ -174,7 +164,7 @@ class ShopThreeProducts extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                width: 5,
+                width: MediaQuery.of(context).size.width * 0.0001,
               ),
             ],
           ),

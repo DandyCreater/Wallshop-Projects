@@ -18,19 +18,20 @@ class ListViewKategori extends StatelessWidget {
           // mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Container(
-              height: 57,
-              width: 57,
+              height: MediaQuery.of(context).size.height * 0.08,
+              width: MediaQuery.of(context).size.width * 0.15,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 color: Color(0xffD9D9D9),
                 image: DecorationImage(
-                    image: AssetImage(categoryStoreModel.imageUrl)),
+                    image: AssetImage(categoryStoreModel.imageUrl),
+                    fit: BoxFit.cover),
               ),
             ),
-            SizedBox(width: 18),
+            SizedBox(width: MediaQuery.of(context).size.width * 0.05),
             Container(
               height: 57,
-              width: 220,
+              width: MediaQuery.of(context).size.width * 0.51,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -52,9 +53,6 @@ class ListViewKategori extends StatelessWidget {
                 ],
               ),
             ),
-            // SizedBox(
-            //   width: 200,
-            // ),
             Expanded(
               child: Container(
                 height: 10,
@@ -68,10 +66,9 @@ class ListViewKategori extends StatelessWidget {
           height: 14,
         ),
         Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Container(
-              width: 315,
+              width: MediaQuery.of(context).size.width * 0.75,
               height: 1,
               decoration: BoxDecoration(color: Color(0xffD9D9D9)),
             ),

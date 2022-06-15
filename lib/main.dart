@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
+import 'package:slicing_homepage/pages/home/homepage.dart';
+import 'package:slicing_homepage/splashscreen.dart';
 import 'pages/master_page.dart';
 
 void main() {
@@ -22,7 +23,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData.light(),
-      home: MasterPage(),
+      // home: MasterPage(),
+      routes: {
+        '/': (context) => SplashScreen(),
+        '/master': (context) => MasterPage(),
+        '/dashboard': (context) => HomePage(),
+      },
     );
   }
 }

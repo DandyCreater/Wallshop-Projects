@@ -45,7 +45,6 @@ class _StorePageState extends State<StorePage>
                       fontWeight: FontWeight.w500),
                 ),
                 Container(
-                  padding: EdgeInsets.only(right: 20),
                   child: Text(
                     "Lihat Semua",
                     style: GoogleFonts.roboto(
@@ -58,21 +57,22 @@ class _StorePageState extends State<StorePage>
             ),
           ),
           Container(
-            padding: EdgeInsets.only(left: 20),
             height: 210,
             width: double.infinity,
             decoration: BoxDecoration(
               color: Colors.white,
             ),
             child: ListView.builder(
+                physics: BouncingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
                 itemCount: listProductTerbaru.length,
                 itemBuilder: ((context, index) => Row(
                       children: [
-                        ListViewStorePage(
-                            productStore: listProductTerbaru[index]),
-                        SizedBox(
-                          width: 16,
+                        Container(
+                          padding: EdgeInsets.only(left: 10),
+                          margin: EdgeInsets.only(left: 6),
+                          child: ListViewStorePage(
+                              productStore: listProductTerbaru[index]),
                         ),
                       ],
                     ))),
@@ -93,7 +93,6 @@ class _StorePageState extends State<StorePage>
                       fontWeight: FontWeight.w500),
                 ),
                 Container(
-                  padding: EdgeInsets.only(right: 20),
                   child: Text(
                     "Lihat Semua",
                     style: GoogleFonts.roboto(
@@ -106,21 +105,22 @@ class _StorePageState extends State<StorePage>
             ),
           ),
           Container(
-            padding: EdgeInsets.only(left: 20),
             height: 210,
             width: double.infinity,
             decoration: BoxDecoration(
               color: Colors.white,
             ),
             child: ListView.builder(
+                physics: BouncingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
                 itemCount: listProductTerlaris.length,
                 itemBuilder: ((context, index) => Row(
                       children: [
-                        ListViewStorePage(
-                            productStore: listProductTerlaris[index]),
-                        SizedBox(
-                          width: 16,
+                        Container(
+                          padding: EdgeInsets.only(left: 10),
+                          margin: EdgeInsets.only(left: 6),
+                          child: ListViewStorePage(
+                              productStore: listProductTerlaris[index]),
                         ),
                       ],
                     ))),
@@ -204,11 +204,16 @@ class _StorePageState extends State<StorePage>
             height: 16,
           ),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            height: 300,
-            width: double.infinity,
-            child: ListView.builder(
-                scrollDirection: Axis.horizontal,
+            padding: EdgeInsets.only(left: 20),
+            height: MediaQuery.of(context).size.height * 0.8,
+            child: GridView.builder(
+                physics: NeverScrollableScrollPhysics(),
+                gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                  maxCrossAxisExtent: MediaQuery.of(context).size.width * 0.48,
+                  mainAxisExtent: MediaQuery.of(context).size.height * 0.37,
+                  childAspectRatio: MediaQuery.of(context).size.width /
+                      MediaQuery.of(context).size.height,
+                ),
                 itemCount: listSemuaProduct.length,
                 itemBuilder: ((context, index) {
                   return Row(
@@ -216,15 +221,12 @@ class _StorePageState extends State<StorePage>
                       ListViewSemuaProduk(
                         semuaProductModel: listSemuaProduct[index],
                       ),
-                      SizedBox(
-                        width: 15,
-                      ),
                     ],
                   );
                 })),
           ),
           SizedBox(
-            height: 30,
+            height: MediaQuery.of(context).size.height * 0.001,
           ),
         ],
       );
@@ -232,6 +234,7 @@ class _StorePageState extends State<StorePage>
 
   //AppBar Content
   Widget Content() => Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
             height: 20,
@@ -290,7 +293,6 @@ class _StorePageState extends State<StorePage>
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.only(right: 20),
                   height: 100,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -313,10 +315,10 @@ class _StorePageState extends State<StorePage>
             ),
           ),
           SizedBox(
-            height: 5,
+            height: 10,
           ),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 20),
+            padding: EdgeInsets.only(left: 20, right: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -328,6 +330,9 @@ class _StorePageState extends State<StorePage>
                     fontSize: 13,
                   ),
                 ),
+                SizedBox(
+                  height: 5,
+                ),
                 Text(
                   "Sport Fashion",
                   style: GoogleFonts.poppins(
@@ -336,8 +341,10 @@ class _StorePageState extends State<StorePage>
                     fontSize: 13,
                   ),
                 ),
+                SizedBox(
+                  height: 5,
+                ),
                 Container(
-                  padding: EdgeInsets.only(right: 20),
                   child: Text(
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et ",
                     style: GoogleFonts.poppins(
@@ -354,70 +361,77 @@ class _StorePageState extends State<StorePage>
             height: 13,
           ),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 20),
+            padding: EdgeInsets.only(left: 20.0, right: 20.0),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Container(
-                  height: 35,
-                  width: 105,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5),
-                    color: Color(0xffFFFFFF),
-                    border: Border.all(color: Color(0xffD9D9D9), width: 1),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Mengikuti",
-                        style: GoogleFonts.poppins(
-                            fontSize: 11,
-                            color: Color(0xff63767E),
-                            fontWeight: FontWeight.w500),
-                      ),
-                      Icon(Icons.expand_more),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  width: 7,
-                ),
-                Container(
-                  height: 35,
-                  width: 105,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5),
-                    color: Color(0xffFFFFFF),
-                    border: Border.all(color: Color(0xffD9D9D9), width: 1),
-                  ),
-                  child: Center(
-                    child: Text(
-                      "Pesan",
-                      style: GoogleFonts.poppins(
-                          fontSize: 11,
-                          color: Color(0xff63767E),
-                          fontWeight: FontWeight.w500),
+                Expanded(
+                  child: Container(
+                    height: 35,
+                    width: 105,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      color: Color(0xffFFFFFF),
+                      border: Border.all(color: Color(0xffD9D9D9), width: 1),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Mengikuti",
+                          style: GoogleFonts.poppins(
+                              fontSize: 11,
+                              color: Color(0xff63767E),
+                              fontWeight: FontWeight.w500),
+                        ),
+                        Icon(Icons.expand_more),
+                      ],
                     ),
                   ),
                 ),
                 SizedBox(
                   width: 7,
                 ),
-                Container(
-                  height: 35,
-                  width: 105,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5),
-                    color: Color(0xffFFFFFF),
-                    border: Border.all(color: Color(0xffD9D9D9), width: 1),
+                Expanded(
+                  child: Container(
+                    height: 35,
+                    width: 105,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      color: Color(0xffFFFFFF),
+                      border: Border.all(color: Color(0xffD9D9D9), width: 1),
+                    ),
+                    child: Center(
+                      child: Text(
+                        "Pesan",
+                        style: GoogleFonts.poppins(
+                            fontSize: 11,
+                            color: Color(0xff63767E),
+                            fontWeight: FontWeight.w500),
+                      ),
+                    ),
                   ),
-                  child: Center(
-                    child: Text(
-                      "Lihat Lokasi ",
-                      style: GoogleFonts.poppins(
-                          fontSize: 11,
-                          color: Color(0xff63767E),
-                          fontWeight: FontWeight.w500),
+                ),
+                SizedBox(
+                  width: 7,
+                ),
+                Expanded(
+                  child: Container(
+                    height: 35,
+                    width: 105,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      color: Color(0xffFFFFFF),
+                      border: Border.all(color: Color(0xffD9D9D9), width: 1),
+                    ),
+                    child: Center(
+                      child: Text(
+                        "Lihat Lokasi ",
+                        style: GoogleFonts.poppins(
+                            fontSize: 11,
+                            color: Color(0xff63767E),
+                            fontWeight: FontWeight.w500),
+                      ),
                     ),
                   ),
                 ),
@@ -467,9 +481,13 @@ class _StorePageState extends State<StorePage>
                   fontWeight: FontWeight.w600,
                   color: Color(0xff3F3F3F)),
             ),
+            SizedBox(
+              height: 20,
+            ),
             Container(
-              height: 800,
+              height: MediaQuery.of(context).size.height * 0.9,
               child: ListView.builder(
+                  physics: NeverScrollableScrollPhysics(),
                   // scrollDirection: Axis.vertical,
                   itemCount: kategoriStoreModel.length,
                   itemBuilder: ((context, index) {
@@ -483,116 +501,117 @@ class _StorePageState extends State<StorePage>
 
   @override
   Widget build(BuildContext context) {
+    var ScreenHeight = MediaQuery.of(context).size.height;
+    var ScreenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Colors.white,
-      body: NestedScrollView(
-        headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
-          return <Widget>[
-            SliverAppBar(
-              pinned: true,
-              floating: false,
-              leadingWidth: 40,
-              centerTitle: false,
-              // snap: true,
-
-              backgroundColor: Colors.white,
-              elevation: 0,
-              leading: IconButton(
-                padding: const EdgeInsets.only(left: 20.0),
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                icon: Icon(Icons.arrow_back, color: Colors.black),
-              ),
-              expandedHeight: 370.0,
-
-              flexibleSpace: Container(
-                padding: EdgeInsets.only(top: 80),
-                child: FlexibleSpaceBar(
-                  collapseMode: CollapseMode.pin,
-                  background: Content(),
+      body: SafeArea(
+        child: NestedScrollView(
+          headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+            return <Widget>[
+              SliverAppBar(
+                pinned: true,
+                floating: false,
+                leadingWidth: 40,
+                centerTitle: false,
+                backgroundColor: Colors.white,
+                elevation: 0,
+                leading: IconButton(
+                  padding: const EdgeInsets.only(left: 20.0),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: Icon(Icons.arrow_back, color: Colors.black),
                 ),
-              ),
-              title: Container(
-                height: 40,
-                width: 270,
-                child: TextField(
-                  decoration: InputDecoration(
-                    isDense: true,
-                    filled: true,
-                    fillColor: Color(0xffF0F3F8),
-                    hintText: "cari barang atau toko",
-                    hintStyle:
-                        TextStyle(fontSize: 13, color: Color(0xff7C7C7C)),
-                    prefixIcon: Container(
-                      padding: EdgeInsets.fromLTRB(10, 11, 6, 16),
-                      child: Icon(
-                        Icons.search,
-                        color: Color(0xff7C7C7C),
-                        size: 20,
+                expandedHeight: 370.0,
+                flexibleSpace: Container(
+                  padding: EdgeInsets.only(top: 60),
+                  child: FlexibleSpaceBar(
+                    collapseMode: CollapseMode.pin,
+                    background: Content(),
+                  ),
+                ),
+                title: Container(
+                  height: 40,
+                  width: ScreenWidth,
+                  child: TextField(
+                    decoration: InputDecoration(
+                      isDense: true,
+                      filled: true,
+                      fillColor: Color(0xffF0F3F8),
+                      hintText: "cari barang atau toko",
+                      hintStyle:
+                          TextStyle(fontSize: 13, color: Color(0xff7C7C7C)),
+                      prefixIcon: Container(
+                        padding: EdgeInsets.fromLTRB(10, 11, 6, 16),
+                        child: Icon(
+                          Icons.search,
+                          color: Color(0xff7C7C7C),
+                          size: 20,
+                        ),
                       ),
-                    ),
-                    prefixIconConstraints: BoxConstraints(maxWidth: 100),
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide.none,
-                      borderRadius: BorderRadius.circular(11),
-                    ),
-                    contentPadding: EdgeInsets.fromLTRB(26, 8, 26, 14),
-                  ),
-                ),
-              ),
-              actions: [
-                // const SizedBox(width: 30.0),
-
-                IconButton(
-                  onPressed: () {},
-                  padding: const EdgeInsets.only(right: 40.0),
-                  icon: Icon(
-                    Icons.shopping_cart_outlined,
-                    color: Colors.black,
-                    size: 30.0,
-                  ),
-                ),
-              ],
-              bottom: PreferredSize(
-                preferredSize: Size.fromHeight(50),
-                child: DecoratedBox(
-                  decoration: BoxDecoration(
-                      border: Border(
-                          bottom: BorderSide(
-                    width: 1,
-                    color: Colors.grey,
-                  ))),
-                  child: TabBar(
-                    controller: _tabController,
-                    labelColor: Colors.black,
-                    indicatorColor: Colors.black,
-                    indicatorWeight: 0,
-                    indicatorSize: TabBarIndicatorSize.tab,
-                    indicator: MD2Indicator(
-                        indicatorHeight: 3,
-                        indicatorColor: Colors.black,
-                        indicatorSize: MD2IndicatorSize.normal),
-                    tabs: [
-                      Tab(
-                        text: "Produk",
+                      prefixIconConstraints: BoxConstraints(maxWidth: 100),
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                        borderRadius: BorderRadius.circular(11),
                       ),
-                      Tab(text: "Kategori"),
-                      Tab(text: "Promo"),
-                    ],
+                      contentPadding: EdgeInsets.fromLTRB(26, 8, 26, 14),
+                    ),
+                  ),
+                ),
+                actions: [
+                  // const SizedBox(width: 30.0),
+
+                  IconButton(
+                    onPressed: () {},
+                    padding: const EdgeInsets.only(right: 20.0),
+                    icon: Icon(
+                      Icons.shopping_cart_outlined,
+                      color: Colors.black,
+                      size: 30.0,
+                    ),
+                  ),
+                ],
+                bottom: PreferredSize(
+                  preferredSize: Size.fromHeight(50),
+                  child: DecoratedBox(
+                    decoration: BoxDecoration(
+                        border: Border(
+                            bottom: BorderSide(
+                      width: 1,
+                      color: Colors.grey,
+                    ))),
+                    child: TabBar(
+                      controller: _tabController,
+                      labelColor: Colors.black,
+                      indicatorColor: Colors.black,
+                      indicatorWeight: 0,
+                      indicatorSize: TabBarIndicatorSize.tab,
+                      indicator: MD2Indicator(
+                          indicatorHeight: 3,
+                          indicatorColor: Colors.black,
+                          indicatorSize: MD2IndicatorSize.normal),
+                      tabs: [
+                        Tab(
+                          text: "Produk",
+                        ),
+                        Tab(text: "Kategori"),
+                        Tab(text: "Promo"),
+                      ],
+                    ),
                   ),
                 ),
               ),
+            ];
+          },
+          body: TabBarView(controller: _tabController, children: <Widget>[
+            SingleChildScrollView(child: Produk()),
+            SingleChildScrollView(child: Kategori()),
+            Container(
+              child: Center(child: Text("Promo")),
             ),
-          ];
-        },
-        body: TabBarView(controller: _tabController, children: <Widget>[
-          SingleChildScrollView(child: Produk()),
-          SingleChildScrollView(child: Kategori()),
-          Container(
-            child: Center(child: Text("Promo")),
-          ),
-        ]),
+          ]),
+        ),
       ),
     );
   }

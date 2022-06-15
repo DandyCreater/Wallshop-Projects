@@ -1,0 +1,109 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/src/foundation/key.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:slicing_homepage/models/mall_model.dart';
+
+class CustomMallList extends StatelessWidget {
+  final MallModel mallModel;
+  const CustomMallList({Key? key, required this.mallModel}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    var ScreenHeight = MediaQuery.of(context).size.height;
+    var ScreenWidth = MediaQuery.of(context).size.width;
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 10),
+      height: ScreenHeight * 0.162,
+      width: double.infinity,
+      decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            blurRadius: 40,
+            spreadRadius: 0,
+            color: Color(0xffEDEDED),
+            offset: Offset(0, 5),
+          ),
+        ],
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: Row(children: [
+        Container(
+          margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+          height: double.infinity,
+          width: ScreenWidth * 0.25,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(8),
+                bottomLeft: Radius.circular(8),
+              ),
+              image: DecorationImage(
+                  image: AssetImage(mallModel.imageUrl), fit: BoxFit.cover)),
+        ),
+        Container(
+          padding: EdgeInsets.fromLTRB(10, 19, 0, 0),
+          child: Container(
+            width: ScreenWidth * 0.45,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  mallModel.name,
+                  style: GoogleFonts.roboto(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500,
+                      color: Color(0xff393C43)),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Container(
+                  child: Text(
+                    mallModel.address,
+                    style: GoogleFonts.roboto(
+                        fontSize: 13,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xff757575)),
+                    textAlign: TextAlign.justify,
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  children: [
+                    Text(mallModel.information,
+                        style: GoogleFonts.roboto(
+                            fontSize: 13,
+                            fontWeight: FontWeight.w400,
+                            color: Color(0xff01572A))),
+                    SizedBox(
+                      width: 3,
+                    ),
+                    Text(
+                      "·",
+                      style: TextStyle(fontSize: 15, color: Color(0xff757575)),
+                    ),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Text("Closes 22:00",
+                        style: GoogleFonts.roboto(
+                            fontSize: 13,
+                            fontWeight: FontWeight.w500,
+                            color: Color(0xff757575))),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+        SizedBox(
+          width: 35,
+        ),
+        Icon(Icons.arrow_forward_ios),
+      ]),
+    );
+  }
+}

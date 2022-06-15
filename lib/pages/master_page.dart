@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:slicing_homepage/pages/akun/akun_page.dart';
 import 'package:slicing_homepage/pages/explore/explore_page.dart';
+import 'package:slicing_homepage/pages/mengikuti/mengikuti_page.dart';
+import 'package:slicing_homepage/pages/notifikasi/notifikasi_page.dart';
 
 import 'home/homepage.dart';
 
@@ -18,7 +21,9 @@ class _MasterPageState extends State<MasterPage> {
   var pages = [
     HomePage(),
     ExplorePage(),
-    ExplorePage(),
+    MengikutiPage(),
+    NotifikasiPage(),
+    AkunPage(),
   ];
 
   @override

@@ -15,14 +15,6 @@ class ListViewStorePage extends StatelessWidget {
           height: 106,
           width: 104,
           decoration: BoxDecoration(
-            // boxShadow: [
-            //   BoxShadow(
-            //     blurRadius: 20,
-            //     spreadRadius: 0,
-            //     color: Color(0xffEDEDED),
-            //     offset: Offset(0, 4),
-            //   ),
-            // ],
             borderRadius: BorderRadius.circular(10),
             color: Colors.white,
             image: DecorationImage(

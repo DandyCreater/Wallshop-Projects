@@ -10,8 +10,14 @@ class PageViewMainCarousel extends StatelessWidget {
   final pageController = PageController(viewportFraction: .9);
 
   Widget _buildCategories(BuildContext context, category) {
+    var ScreenHeight = MediaQuery.of(context).size.height;
+    var ScreenWidth = MediaQuery.of(context).size.width;
+
     return Container(
-      margin: const EdgeInsets.only(top: 10.0, right: 10.0),
+      margin: EdgeInsets.only(
+        top: 10.0,
+        right: MediaQuery.of(context).size.width * 0.02,
+      ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
         border: Border.all(
@@ -23,6 +29,7 @@ class PageViewMainCarousel extends StatelessWidget {
         children: [
           Container(
             height: double.infinity,
+            width: double.infinity,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(15),
               child: Image.asset(
@@ -42,8 +49,8 @@ class PageViewMainCarousel extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          width: 400.0,
-          height: 190.0,
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height * 0.23,
           child: PageView.builder(
             controller: pageController,
             physics: BouncingScrollPhysics(),
@@ -57,7 +64,9 @@ class PageViewMainCarousel extends StatelessWidget {
         ),
         const SizedBox(height: 20.0),
         Padding(
-          padding: const EdgeInsets.only(left: 40.0),
+          padding: EdgeInsets.only(
+            left: MediaQuery.of(context).size.width * 0.06,
+          ),
           child: SmoothPageIndicator(
             controller: pageController,
             count: categories.length,

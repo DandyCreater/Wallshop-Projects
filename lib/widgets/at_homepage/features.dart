@@ -54,7 +54,9 @@ class Features extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const SizedBox(height: 10.0),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.012,
+                    ),
                     CircleAvatar(
                       radius: 10.0,
                       backgroundColor: Colors.white,

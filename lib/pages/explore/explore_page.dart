@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:md2_tab_indicator/md2_tab_indicator.dart';
+import 'package:slicing_homepage/models/mengikuti_model.dart';
+import 'package:slicing_homepage/models/mall_model.dart';
 import 'package:slicing_homepage/models/store_model.dart';
 import 'package:slicing_homepage/widgets/at_explore/custom_dropdown.dart';
+import 'package:slicing_homepage/widgets/at_explore/custom_mall_list.dart';
 import 'package:slicing_homepage/widgets/at_explore/shop_three_products.dart';
 
 class ExplorePage extends StatefulWidget {
@@ -25,7 +29,167 @@ class _ExplorePageState extends State<ExplorePage>
 
   @override
   Widget build(BuildContext context) {
+    var ScreenHeight = MediaQuery.of(context).size.height;
+    var ScreenWidth = MediaQuery.of(context).size.width;
+
+    //Widget Toko
+    Widget Toko() => Container(
+          padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+          margin: EdgeInsets.only(left: 10, right: 10),
+          child: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  children: [
+                    SizedBox(
+                      width: 15,
+                    ),
+                    CustomDropDown(title: 'Kategori'),
+                    const SizedBox(width: 10.0),
+                    CustomDropDown(title: 'Lokasi'),
+                    const SizedBox(width: 10.0),
+                    Container(
+                      padding: EdgeInsets.only(left: 10),
+                      width: 100.0,
+                      height: 30.0,
+                      decoration: BoxDecoration(
+                        border:
+                            Border.all(width: 0.5, color: Color(0xffC4C4C4)),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Row(
+                        children: [
+                          Container(
+                            height: 15,
+                            width: 20,
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage(
+                                        "assets/icons/icon_filter.png"),
+                                    fit: BoxFit.cover)),
+                          ),
+                          const SizedBox(width: 10.0),
+                          Text(
+                            "Urutkan",
+                            style: TextStyle(fontSize: 12),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 10.0),
+                // list of store
+                ShopThreeProducts(storeModel: listOfStore[0]),
+                SizedBox(
+                  height: 7,
+                ),
+
+                ShopThreeProducts(storeModel: listOfStore[1]),
+                SizedBox(
+                  height: 7,
+                ),
+                ShopThreeProducts(storeModel: listOfStore[2]),
+
+                SizedBox(
+                  height: 20,
+                )
+              ],
+            ),
+          ),
+        );
+
+    //end of Toko
+
+    Widget Barang() => Column(
+          children: [
+            Align(
+              alignment: Alignment.center,
+              child: Center(
+                child: Text("Barang"),
+              ),
+            ),
+          ],
+        );
+    //end of widget Barang
+
+    //Widget Mall
+    Widget Mall() => Container(
+          padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+          margin: EdgeInsets.only(left: 10, right: 10),
+          child: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    SizedBox(
+                      width: 15,
+                    ),
+                    CustomDropDown(title: 'Kategori'),
+                    const SizedBox(width: 10.0),
+                    Container(
+                      padding: EdgeInsets.only(left: 10),
+                      width: 100.0,
+                      height: 30.0,
+                      decoration: BoxDecoration(
+                        border:
+                            Border.all(width: 0.5, color: Color(0xffC4C4C4)),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Row(
+                        children: [
+                          Container(
+                            height: 15,
+                            width: 20,
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage(
+                                        "assets/icons/icon_filter.png"),
+                                    fit: BoxFit.cover)),
+                          ),
+                          const SizedBox(width: 10.0),
+                          Text(
+                            "Urutkan",
+                            style: TextStyle(fontSize: 12),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 20.0),
+                // list of mall
+                Container(
+                  height: ScreenHeight * 1.15,
+                  child: ListView.builder(
+                      scrollDirection: Axis.vertical,
+                      physics: NeverScrollableScrollPhysics(),
+                      itemCount: MallModelList.length,
+                      itemBuilder: ((context, index) {
+                        return Column(
+                          children: [
+                            CustomMallList(mallModel: MallModelList[index]),
+                            SizedBox(
+                              height: ScreenHeight * 0.02,
+                            )
+                          ],
+                        );
+                      })),
+                )
+              ],
+            ),
+          ),
+        );
+    //end of widget barang
+
+    //end of mall widget
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       appBar: AppBar(
         leadingWidth: 40,
@@ -34,7 +198,7 @@ class _ExplorePageState extends State<ExplorePage>
         elevation: 0,
         title: Container(
           height: 40,
-          width: 270,
+          width: ScreenWidth,
           child: TextField(
             decoration: InputDecoration(
               isDense: true,
@@ -55,21 +219,22 @@ class _ExplorePageState extends State<ExplorePage>
                 borderSide: BorderSide.none,
                 borderRadius: BorderRadius.circular(11),
               ),
-              // contentPadding: const EdgeInsets.all(20),
               contentPadding: EdgeInsets.fromLTRB(26, 8, 26, 14),
             ),
           ),
         ),
         leading: IconButton(
           padding: const EdgeInsets.only(left: 20.0),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: Icon(Icons.arrow_back, color: Colors.black),
         ),
         actions: [
           // const SizedBox(width: 30.0),
           IconButton(
             onPressed: () {},
-            padding: const EdgeInsets.only(right: 40.0),
+            padding: const EdgeInsets.only(right: 20.0),
             icon: Icon(
               Icons.shopping_cart_outlined,
               color: Colors.black,
@@ -107,64 +272,14 @@ class _ExplorePageState extends State<ExplorePage>
           ),
         ),
       ),
-      body: Container(
-        padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
-        margin: EdgeInsets.only(left: 10, right: 10),
-        child: SingleChildScrollView(
-          physics: const BouncingScrollPhysics(),
-          child: Column(
-            children: [
-              Row(
-                children: [
-                  SizedBox(
-                    width: 15,
-                  ),
-                  CustomDropDown(title: 'Kategori'),
-                  const SizedBox(width: 10.0),
-                  CustomDropDown(title: 'Lokasi'),
-                  const SizedBox(width: 10.0),
-                  Container(
-                    width: 100.0,
-                    height: 30.0,
-                    decoration: BoxDecoration(
-                      border: Border.all(width: 1),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Row(
-                      children: [
-                        IconButton(
-                          padding: const EdgeInsets.only(bottom: 0),
-                          onPressed: () {},
-                          icon: Icon(Icons.tune),
-                        ),
-                        Text(
-                          "Urutkan",
-                          style: TextStyle(fontSize: 12),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 10.0),
-              // list of store
-              ShopThreeProducts(storeModel: listOfStore[0]),
-              SizedBox(
-                height: 7,
-              ),
-
-              ShopThreeProducts(storeModel: listOfStore[1]),
-              SizedBox(
-                height: 7,
-              ),
-              ShopThreeProducts(storeModel: listOfStore[2]),
-
-              SizedBox(
-                height: 20,
-              )
-            ],
-          ),
-        ),
+      body: TabBarView(
+        controller: _tabController,
+        children: [
+          Toko(),
+          SingleChildScrollView(
+              physics: BouncingScrollPhysics(), child: Barang()),
+          Mall(),
+        ],
       ),
     );
   }
