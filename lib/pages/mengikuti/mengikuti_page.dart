@@ -14,20 +14,18 @@ class MengikutiPage extends StatelessWidget {
     var ScreenHeight = MediaQuery.of(context).size.height;
     var ScreenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         leadingWidth: 40,
         centerTitle: false,
         backgroundColor: Colors.white,
         elevation: 0,
-        title: Container(
-          width: ScreenWidth,
-          child: Text(
-            "Mengikuti",
-            style: GoogleFonts.poppins(
-                fontWeight: FontWeight.w600,
-                fontSize: 20,
-                color: Color(0xff3F3F3F)),
-          ),
+        title: Text(
+          "Mengikuti",
+          style: GoogleFonts.poppins(
+              fontWeight: FontWeight.w600,
+              fontSize: 20,
+              color: Color(0xff3F3F3F)),
         ),
         leading: IconButton(
           padding: const EdgeInsets.only(left: 20.0),
@@ -50,17 +48,14 @@ class MengikutiPage extends StatelessWidget {
         ],
       ),
       body: SingleChildScrollView(
-        // physics: BouncingScrollPhysics(),
+        physics: BouncingScrollPhysics(),
         child: Column(
           children: [
-            SizedBox(
-              height: 10,
-            ),
             Container(
-              height: ScreenHeight * 0.9,
+              height: ScreenHeight * 5,
               //  600,
               child: ListView.builder(
-                  // physics: NeverScrollableScrollPhysics(),
+                  physics: NeverScrollableScrollPhysics(),
                   scrollDirection: Axis.vertical,
                   itemCount: barangModelList.length,
                   itemBuilder: (context, index) {

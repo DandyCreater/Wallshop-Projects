@@ -33,74 +33,86 @@ class _ExplorePageState extends State<ExplorePage>
     var ScreenWidth = MediaQuery.of(context).size.width;
 
     //Widget Toko
-    Widget Toko() => Container(
-          padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
-          margin: EdgeInsets.only(left: 10, right: 10),
-          child: SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            child: Column(
-              children: [
-                SizedBox(
-                  height: 20,
-                ),
-                Row(
-                  children: [
-                    SizedBox(
-                      width: 15,
-                    ),
-                    CustomDropDown(title: 'Kategori'),
-                    const SizedBox(width: 10.0),
-                    CustomDropDown(title: 'Lokasi'),
-                    const SizedBox(width: 10.0),
-                    Container(
-                      padding: EdgeInsets.only(left: 10),
-                      width: 100.0,
-                      height: 30.0,
-                      decoration: BoxDecoration(
-                        border:
-                            Border.all(width: 0.5, color: Color(0xffC4C4C4)),
-                        borderRadius: BorderRadius.circular(20),
-                      ),
+    Widget Toko() => SafeArea(
+          child: NestedScrollView(
+              headerSliverBuilder: (BuildContext context, innerBoxIsScrolled) {
+                return <Widget>[
+                  SliverAppBar(
+                    pinned: true,
+                    floating: false,
+                    leadingWidth: ScreenWidth * 0.02,
+                    centerTitle: true,
+                    backgroundColor: Colors.white,
+                    elevation: 0,
+                    title: Container(
+                      height: 30,
+                      // width: ScreenWidth,
                       child: Row(
+                        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Container(
-                            height: 15,
-                            width: 20,
-                            decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: AssetImage(
-                                        "assets/icons/icon_filter.png"),
-                                    fit: BoxFit.cover)),
-                          ),
+                          CustomDropDown(title: 'Kategori'),
                           const SizedBox(width: 10.0),
-                          Text(
-                            "Urutkan",
-                            style: TextStyle(fontSize: 12),
+                          CustomDropDown(title: 'Lokasi'),
+                          const SizedBox(width: 10.0),
+                          Container(
+                            padding: EdgeInsets.only(left: 10),
+                            width: 100.0,
+                            height: 30.0,
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                  width: 0.5, color: Color(0xffC4C4C4)),
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: Row(
+                              children: [
+                                Container(
+                                  height: 15,
+                                  width: 20,
+                                  decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                              "assets/icons/icon_filter.png"),
+                                          fit: BoxFit.cover)),
+                                ),
+                                const SizedBox(width: 10.0),
+                                Expanded(
+                                  child: Text(
+                                    "Urutkan",
+                                    style: TextStyle(
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w400,
+                                        color: Color(0xff4D4D4D)),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ],
                       ),
                     ),
+                  ),
+                ];
+              },
+              body: Container(
+                margin: EdgeInsets.only(left: 10, right: 10),
+                child: SingleChildScrollView(
+                    child: Column(
+                  children: [
+                    ShopThreeProducts(storeModel: listOfStore[0]),
+                    SizedBox(
+                      height: 7,
+                    ),
+                    ShopThreeProducts(storeModel: listOfStore[1]),
+                    SizedBox(
+                      height: 7,
+                    ),
+                    ShopThreeProducts(storeModel: listOfStore[2]),
+                    SizedBox(
+                      height: 20,
+                    )
                   ],
-                ),
-                const SizedBox(height: 10.0),
-                // list of store
-                ShopThreeProducts(storeModel: listOfStore[0]),
-                SizedBox(
-                  height: 7,
-                ),
-
-                ShopThreeProducts(storeModel: listOfStore[1]),
-                SizedBox(
-                  height: 7,
-                ),
-                ShopThreeProducts(storeModel: listOfStore[2]),
-
-                SizedBox(
-                  height: 20,
-                )
-              ],
-            ),
-          ),
+                )),
+              )),
         );
 
     //end of Toko
@@ -118,55 +130,81 @@ class _ExplorePageState extends State<ExplorePage>
     //end of widget Barang
 
     //Widget Mall
-    Widget Mall() => Container(
-          padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
-          margin: EdgeInsets.only(left: 10, right: 10),
-          child: SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            child: Column(
-              children: [
-                Row(
-                  children: [
-                    SizedBox(
-                      width: 15,
-                    ),
-                    CustomDropDown(title: 'Kategori'),
-                    const SizedBox(width: 10.0),
-                    Container(
-                      padding: EdgeInsets.only(left: 10),
-                      width: 100.0,
-                      height: 30.0,
-                      decoration: BoxDecoration(
-                        border:
-                            Border.all(width: 0.5, color: Color(0xffC4C4C4)),
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: Row(
+    Widget Mall() => SafeArea(
+          child: NestedScrollView(
+            headerSliverBuilder: ((BuildContext context, innerBoxIsScrolled) {
+              return <Widget>[
+                SliverAppBar(
+                  pinned: true,
+                  floating: false,
+                  leadingWidth: ScreenWidth * 0.02,
+                  backgroundColor: Colors.white,
+                  elevation: 0,
+                  expandedHeight: 20,
+                  flexibleSpace: Container(
+                    color: Colors.white,
+                    child: FlexibleSpaceBar(
+                      collapseMode: CollapseMode.pin,
+                      background: Column(
                         children: [
-                          Container(
-                            height: 15,
-                            width: 20,
-                            decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: AssetImage(
-                                        "assets/icons/icon_filter.png"),
-                                    fit: BoxFit.cover)),
-                          ),
-                          const SizedBox(width: 10.0),
-                          Text(
-                            "Urutkan",
-                            style: TextStyle(fontSize: 12),
-                          ),
+                          Container(height: 10, color: Colors.white),
                         ],
                       ),
                     ),
-                  ],
+                  ),
+                  title: Row(
+                    children: [
+                      SizedBox(
+                        width: 15,
+                      ),
+                      CustomDropDown(title: 'Lokasi'),
+                      const SizedBox(width: 10.0),
+                      Container(
+                        padding: EdgeInsets.only(left: 10),
+                        width: 100.0,
+                        height: 30.0,
+                        decoration: BoxDecoration(
+                          border:
+                              Border.all(width: 0.5, color: Color(0xffC4C4C4)),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Row(
+                          children: [
+                            Container(
+                              height: 15,
+                              width: 20,
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      image: AssetImage(
+                                          "assets/icons/icon_filter.png"),
+                                      fit: BoxFit.cover)),
+                            ),
+                            const SizedBox(width: 10.0),
+                            Expanded(
+                              child: Text(
+                                "Urutkan",
+                                style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w400,
+                                    color: Color(0xff4D4D4D)),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-                const SizedBox(height: 20.0),
-                // list of mall
-                Container(
+              ];
+            }),
+            body: Container(
+              margin: EdgeInsets.symmetric(horizontal: ScreenWidth * 0.015),
+              child: SingleChildScrollView(
+                physics: BouncingScrollPhysics(),
+                child: Container(
                   height: ScreenHeight * 1.15,
                   child: ListView.builder(
+                      shrinkWrap: true,
                       scrollDirection: Axis.vertical,
                       physics: NeverScrollableScrollPhysics(),
                       itemCount: MallModelList.length,
@@ -180,11 +218,25 @@ class _ExplorePageState extends State<ExplorePage>
                           ],
                         );
                       })),
-                )
-              ],
+                ),
+              ),
             ),
           ),
         );
+
+    // Container(
+    //       padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+    //       margin: EdgeInsets.symmetric(horizontal: ScreenWidth * 0.015),
+    //       // margin: EdgeInsets.only(left: 10, right: 10),
+    //       child: Column(
+    //         children: [
+    //           SizedBox(
+    //             height: 20,
+    //           ),
+    //
+    //           const SizedBox(height: 20.0),
+    //           // list of mall
+    //
     //end of widget barang
 
     //end of mall widget

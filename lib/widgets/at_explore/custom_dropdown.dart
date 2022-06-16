@@ -11,8 +11,8 @@ class CustomDropDown extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(left: 20.0),
-      width: 90.0,
+      padding: const EdgeInsets.only(left: 10.0),
+      width: 80.0,
       height: 30.0,
       decoration: BoxDecoration(
         border: Border.all(color: Color(0xffC4C4C4), width: 0.5),
@@ -23,15 +23,20 @@ class CustomDropDown extends StatelessWidget {
           Text(
             "$title",
             style: GoogleFonts.roboto(
-                fontSize: 10,
+                fontSize: 12,
                 fontWeight: FontWeight.w400,
                 color: Color(0xff4D4D4D)),
           ),
           Expanded(
+            // height: 10.0,
             child: IconButton(
               padding: const EdgeInsets.only(bottom: 0),
               onPressed: () {},
-              icon: Icon(Icons.expand_more),
+              icon: Icon(
+                Icons.expand_more,
+                size: 20,
+                color: Colors.black,
+              ),
             ),
           )
         ],

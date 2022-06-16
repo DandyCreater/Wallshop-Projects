@@ -204,13 +204,13 @@ class _StorePageState extends State<StorePage>
             height: 16,
           ),
           Container(
-            padding: EdgeInsets.only(left: 20),
+            padding: EdgeInsets.only(left: 30, right: 20),
             height: MediaQuery.of(context).size.height * 0.8,
             child: GridView.builder(
                 physics: NeverScrollableScrollPhysics(),
                 gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                  maxCrossAxisExtent: MediaQuery.of(context).size.width * 0.48,
-                  mainAxisExtent: MediaQuery.of(context).size.height * 0.37,
+                  maxCrossAxisExtent: MediaQuery.of(context).size.width * 0.52,
+                  mainAxisExtent: MediaQuery.of(context).size.height * 0.4,
                   childAspectRatio: MediaQuery.of(context).size.width /
                       MediaQuery.of(context).size.height,
                 ),
@@ -561,7 +561,6 @@ class _StorePageState extends State<StorePage>
                 ),
                 actions: [
                   // const SizedBox(width: 30.0),
-
                   IconButton(
                     onPressed: () {},
                     padding: const EdgeInsets.only(right: 20.0),

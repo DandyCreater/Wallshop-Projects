@@ -20,8 +20,11 @@ class CustomBarangContent extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            SizedBox(
+              height: 20,
+            ),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: EdgeInsets.only(left: ScreenWidth * 0.03),
               child: Row(
                 children: [
                   Container(
@@ -60,6 +63,16 @@ class CustomBarangContent extends StatelessWidget {
                               color: Color(0xff63767E)),
                         ),
                       ],
+                    ),
+                  ),
+                  SizedBox(
+                    width: ScreenWidth * 0.57,
+                  ),
+                  Expanded(
+                    child: Container(
+                      height: ScreenHeight * 0.03,
+                      width: ScreenWidth * 0.074,
+                      child: SvgPicture.asset("assets/icons/icon_three.svg"),
                     ),
                   ),
                 ],
@@ -127,11 +140,6 @@ class CustomBarangContent extends StatelessWidget {
                   height: ScreenHeight * 0.029,
                   width: ScreenWidth * 0.055,
                   child: SvgPicture.asset("assets/icons/icon_comment.svg"),
-                  // decoration: BoxDecoration(
-                  //   image: DecorationImage(
-                  //       image: AssetImage("assets/icons/icon_comment.png"),
-                  //       fit: BoxFit.cover),
-                  // ),
                 ),
                 SizedBox(
                   width: 23,
@@ -140,25 +148,21 @@ class CustomBarangContent extends StatelessWidget {
                   height: ScreenHeight * 0.029,
                   width: ScreenWidth * 0.055,
                   child: SvgPicture.asset("assets/icons/icon_share.svg"),
-                  // decoration: BoxDecoration(
-                  //   image: DecorationImage(
-                  //       image: AssetImage("assets/icons/icon_share.png"),
-                  //       fit: BoxFit.cover),
-                  // ),
                 ),
                 SizedBox(
-                  width: ScreenWidth * 0.58,
+                  width: ScreenWidth * 0.59,
                 ),
-                Container(
-                  margin: EdgeInsets.only(right: 20),
-                  height: ScreenHeight * 0.029,
-                  width: ScreenWidth * 0.055,
-                  child: SvgPicture.asset("assets/icons/icon_saved.svg"),
-                  // decoration: BoxDecoration(
-                  //   image: DecorationImage(
-                  //       image: ("assets/icons/icon_saved.svg"),
-                  //       fit: BoxFit.cover),
-                  // ),
+                Expanded(
+                  child: Container(
+                    height: ScreenHeight * 0.029,
+                    width: ScreenWidth * 0.055,
+                    child: SvgPicture.asset("assets/icons/icon_saved.svg"),
+                    // decoration: BoxDecoration(
+                    //   image: DecorationImage(
+                    //       image: ("assets/icons/icon_saved.svg"),
+                    //       fit: BoxFit.cover),
+                    // ),
+                  ),
                 ),
               ]),
             ),
@@ -166,7 +170,7 @@ class CustomBarangContent extends StatelessWidget {
               height: 14,
             ),
             Container(
-              padding: EdgeInsets.only(left: 20),
+              padding: EdgeInsets.symmetric(horizontal: ScreenWidth * 0.042),
               child: Text(
                 "${barangModel.likes} likes",
                 style: GoogleFonts.roboto(
@@ -180,7 +184,7 @@ class CustomBarangContent extends StatelessWidget {
             ),
             Container(
               width: ScreenWidth * 0.9,
-              margin: EdgeInsets.only(left: 20, right: 20),
+              padding: EdgeInsets.symmetric(horizontal: ScreenWidth * 0.042),
               child: Row(children: [
                 Text(barangModel.namaToko,
                     style: GoogleFonts.roboto(
@@ -191,19 +195,22 @@ class CustomBarangContent extends StatelessWidget {
                 SizedBox(
                   width: 3,
                 ),
-                Text(barangModel.deskripsi,
-                    style: GoogleFonts.roboto(
-                      fontSize: 13,
-                      fontWeight: FontWeight.w400,
-                      color: Color(0xff27282C),
-                    )),
+                Text(
+                  barangModel.deskripsi,
+                  style: GoogleFonts.roboto(
+                    fontSize: 13,
+                    fontWeight: FontWeight.w400,
+                    color: Color(0xff27282C),
+                  ),
+                  textAlign: TextAlign.justify,
+                ),
               ]),
             ),
             SizedBox(
               height: 6,
             ),
             Container(
-              padding: EdgeInsets.only(left: 20),
+              padding: EdgeInsets.symmetric(horizontal: ScreenWidth * 0.042),
               child: Text("Lihat semua ${barangModel.komentar} komentar",
                   style: GoogleFonts.roboto(
                       fontSize: 13,
@@ -214,7 +221,7 @@ class CustomBarangContent extends StatelessWidget {
               height: 4,
             ),
             Container(
-              padding: EdgeInsets.only(left: 20),
+              padding: EdgeInsets.symmetric(horizontal: ScreenWidth * 0.042),
               child: Text(
                 "${barangModel.waktu} Jam yang lalu",
                 style: GoogleFonts.roboto(

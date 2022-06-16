@@ -13,7 +13,7 @@ class CustomMallList extends StatelessWidget {
     var ScreenHeight = MediaQuery.of(context).size.height;
     var ScreenWidth = MediaQuery.of(context).size.width;
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 10),
+      margin: EdgeInsets.symmetric(horizontal: ScreenWidth * 0.03),
       height: ScreenHeight * 0.162,
       width: double.infinity,
       decoration: BoxDecoration(
@@ -32,7 +32,7 @@ class CustomMallList extends StatelessWidget {
         Container(
           margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
           height: double.infinity,
-          width: ScreenWidth * 0.25,
+          width: ScreenWidth * 0.27,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(8),
@@ -102,7 +102,10 @@ class CustomMallList extends StatelessWidget {
         SizedBox(
           width: 35,
         ),
-        Icon(Icons.arrow_forward_ios),
+        Icon(
+          Icons.arrow_forward_ios,
+          size: 15,
+        ),
       ]),
     );
   }

@@ -46,5 +46,32 @@ List<BarangModel> barangModelList = [
       komentar: 7,
       likes: 259,
       waktu: 2,
-      deskripsi: "Lorem ipsum dolor sit amet, consectetur")
+      deskripsi: "Lorem ipsum dolor sit amet, consectetur"),
+  BarangModel(
+      namaToko: "Manado Pet Store",
+      kondisiProduk: "Produk baru",
+      imageUrlToko: "assets/icons/icon_shop.png",
+      imageUrl: "assets/images/shark.png",
+      komentar: 7,
+      likes: 259,
+      waktu: 2,
+      deskripsi: "Lorem ipsum dolor sit amet, consectetur"),
+  BarangModel(
+      namaToko: "Manado Pet Store",
+      kondisiProduk: "Produk baru",
+      imageUrlToko: "assets/icons/icon_shop.png",
+      imageUrl: "assets/images/bunglon.png",
+      komentar: 7,
+      likes: 259,
+      waktu: 2,
+      deskripsi: "Lorem ipsum dolor sit amet, consectetur"),
+  BarangModel(
+      namaToko: "Manado Pet Store",
+      kondisiProduk: "Produk baru",
+      imageUrlToko: "assets/icons/icon_shop.png",
+      imageUrl: "assets/images/fish.png",
+      komentar: 7,
+      likes: 259,
+      waktu: 2,
+      deskripsi: "Lorem ipsum dolor sit amet, consectetur"),
 ];
