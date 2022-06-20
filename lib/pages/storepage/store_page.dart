@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:md2_tab_indicator/md2_tab_indicator.dart';
 import 'package:slicing_homepage/models/category_store_model.dart';
+import 'package:slicing_homepage/models/homepage/homepage_model.dart';
 import 'package:slicing_homepage/models/product_store_model.dart';
 import 'package:slicing_homepage/pages/storepage/produk_store_page.dart';
 import 'package:slicing_homepage/widgets/at_store_page/listview_kategori.dart';
@@ -210,7 +211,7 @@ class _StorePageState extends State<StorePage>
                 physics: NeverScrollableScrollPhysics(),
                 gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                   maxCrossAxisExtent: MediaQuery.of(context).size.width * 0.52,
-                  mainAxisExtent: MediaQuery.of(context).size.height * 0.4,
+                  mainAxisExtent: MediaQuery.of(context).size.height * 0.39,
                   childAspectRatio: MediaQuery.of(context).size.width /
                       MediaQuery.of(context).size.height,
                 ),
@@ -250,9 +251,11 @@ class _StorePageState extends State<StorePage>
                   width: 100,
                   decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: Color(0xffD9D9D9),
+                      color: Color(0xffFFBA1E),
                       image: DecorationImage(
-                          image: AssetImage('assets/icons/icon_shop.png'))),
+                        scale: 0.7,
+                        image: AssetImage('assets/icons/icon_small_store.png'),
+                      )),
                 ),
                 Container(
                   height: 100,
@@ -377,6 +380,9 @@ class _StorePageState extends State<StorePage>
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
+                        SizedBox(
+                          width: 4,
+                        ),
                         Text(
                           "Mengikuti",
                           style: GoogleFonts.poppins(
@@ -523,7 +529,7 @@ class _StorePageState extends State<StorePage>
                   },
                   icon: Icon(Icons.arrow_back, color: Colors.black),
                 ),
-                expandedHeight: 370.0,
+                expandedHeight: 400.0,
                 flexibleSpace: Container(
                   padding: EdgeInsets.only(top: 60),
                   child: FlexibleSpaceBar(
@@ -603,13 +609,16 @@ class _StorePageState extends State<StorePage>
               ),
             ];
           },
-          body: TabBarView(controller: _tabController, children: <Widget>[
-            SingleChildScrollView(child: Produk()),
-            SingleChildScrollView(child: Kategori()),
-            Container(
-              child: Center(child: Text("Promo")),
-            ),
-          ]),
+          body: TabBarView(
+              physics: NeverScrollableScrollPhysics(),
+              controller: _tabController,
+              children: <Widget>[
+                SingleChildScrollView(child: Produk()),
+                SingleChildScrollView(child: Kategori()),
+                Container(
+                  child: Center(child: Text("Promo")),
+                ),
+              ]),
         ),
       ),
     );

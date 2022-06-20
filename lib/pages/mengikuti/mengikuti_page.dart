@@ -47,25 +47,13 @@ class MengikutiPage extends StatelessWidget {
           ),
         ],
       ),
-      body: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
-        child: Column(
-          children: [
-            Container(
-              height: ScreenHeight * 5,
-              //  600,
-              child: ListView.builder(
-                  physics: NeverScrollableScrollPhysics(),
-                  scrollDirection: Axis.vertical,
-                  itemCount: barangModelList.length,
-                  itemBuilder: (context, index) {
-                    return CustomBarangContent(
-                        barangModel: barangModelList[index]);
-                  }),
-            ),
-          ],
-        ),
-      ),
+      body: ListView.builder(
+          physics: BouncingScrollPhysics(),
+          scrollDirection: Axis.vertical,
+          itemCount: barangModelList.length,
+          itemBuilder: (context, index) {
+            return CustomBarangContent(barangModel: barangModelList[index]);
+          }),
     );
   }
 }

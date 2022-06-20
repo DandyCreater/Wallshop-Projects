@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:slicing_homepage/pages/akun/akun_page.dart';
 import 'package:slicing_homepage/pages/explore/explore_page.dart';
 import 'package:slicing_homepage/pages/mengikuti/mengikuti_page.dart';
@@ -33,25 +34,69 @@ class _MasterPageState extends State<MasterPage> {
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         currentIndex: _currentIndex,
-        fixedColor: Colors.red.shade900,
+        fixedColor: Colors.black,
         onTap: (value) => setState(() => _currentIndex = value),
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.house, size: 30.0),
+            activeIcon: Container(
+              height: 20,
+              width: 20,
+              child: SvgPicture.asset("assets/icons/icon_active_home.svg"),
+            ),
+            icon: Container(
+              height: 20,
+              width: 20,
+              child: SvgPicture.asset("assets/icons/icon_home.svg"),
+            ),
             label: 'Beranda',
           ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.explore, size: 30.0), label: 'Explore'),
+              activeIcon: Container(
+                height: 20,
+                width: 20,
+                child: SvgPicture.asset("assets/icons/icon_active_explore.svg"),
+              ),
+              icon: Container(
+                height: 20,
+                width: 20,
+                child: SvgPicture.asset("assets/icons/icon_search_normal.svg"),
+              ),
+              label: 'Explore'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.check_box_outlined, size: 30.0),
+              activeIcon: Container(
+                height: 20,
+                width: 20,
+                child: SvgPicture.asset("assets/icons/icon_active_follow.svg"),
+              ),
+              icon: Container(
+                height: 20,
+                width: 20,
+                child: SvgPicture.asset("assets/icons/icon_follow.svg"),
+              ),
               label: 'Mengikuti'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.favorite_outline, size: 30.0),
+              activeIcon: Container(
+                height: 20,
+                width: 20,
+                child: SvgPicture.asset(
+                    "assets/icons/icon_active_notification.svg"),
+              ),
+              icon: Container(
+                height: 20,
+                width: 20,
+                child: SvgPicture.asset("assets/icons/icon_notification.svg"),
+              ),
               label: 'Notifikasi'),
           BottomNavigationBarItem(
-              icon: Image.asset(
-                'assets/images/user_profile.png',
-                scale: 2.5,
+              icon: Container(
+                height: 20,
+                width: 20,
+                child: FittedBox(
+                  child: Image.asset(
+                    'assets/images/user_profile.png',
+                  ),
+                  fit: BoxFit.fill,
+                ),
               ),
               label: "Akun"),
         ],

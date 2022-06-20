@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:md2_tab_indicator/md2_tab_indicator.dart';
+import 'package:slicing_homepage/models/explore/barang/barang_model.dart';
 import 'package:slicing_homepage/models/mengikuti_model.dart';
 import 'package:slicing_homepage/models/mall_model.dart';
+import 'package:slicing_homepage/models/product_store_model.dart';
 import 'package:slicing_homepage/models/store_model.dart';
 import 'package:slicing_homepage/widgets/at_explore/custom_dropdown.dart';
+import 'package:slicing_homepage/widgets/at_explore/custom_dropdown_barang.dart';
 import 'package:slicing_homepage/widgets/at_explore/custom_mall_list.dart';
 import 'package:slicing_homepage/widgets/at_explore/shop_three_products.dart';
+import 'package:slicing_homepage/widgets/at_store_page/listview_semuaproduk.dart';
 
 class ExplorePage extends StatefulWidget {
   ExplorePage({Key? key}) : super(key: key);
@@ -108,6 +113,14 @@ class _ExplorePageState extends State<ExplorePage>
                     ),
                     ShopThreeProducts(storeModel: listOfStore[2]),
                     SizedBox(
+                      height: 7,
+                    ),
+                    ShopThreeProducts(storeModel: listOfStore[3]),
+                    SizedBox(
+                      height: 7,
+                    ),
+                    ShopThreeProducts(storeModel: listOfStore[4]),
+                    SizedBox(
                       height: 20,
                     )
                   ],
@@ -117,15 +130,61 @@ class _ExplorePageState extends State<ExplorePage>
 
     //end of Toko
 
-    Widget Barang() => Column(
-          children: [
-            Align(
-              alignment: Alignment.center,
-              child: Center(
-                child: Text("Barang"),
-              ),
-            ),
-          ],
+    Widget Barang() => SafeArea(
+          child: NestedScrollView(
+            headerSliverBuilder: ((BuildContext context, innerBoxIsScrolled) {
+              return <Widget>[
+                SliverAppBar(
+                  pinned: true,
+                  floating: true,
+                  leadingWidth: 0,
+                  backgroundColor: Colors.white,
+                  elevation: 0,
+                  expandedHeight: 20,
+                  title: Row(
+                    children: [
+                      SizedBox(
+                        width: 10,
+                      ),
+                      CustomDropDown(title: 'Kategori'),
+                      const SizedBox(width: 10.0),
+                      CustomDropDown(title: 'Lokasi'),
+                      const SizedBox(width: 10.0),
+                      CustomDropDown(title: 'Urutkan'),
+                      const SizedBox(width: 10.0),
+                    ],
+                  ),
+                ),
+              ];
+            }),
+            body: GridView.builder(
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                physics: NeverScrollableScrollPhysics(),
+                gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                  maxCrossAxisExtent: MediaQuery.of(context).size.width * 0.52,
+                  mainAxisExtent: MediaQuery.of(context).size.height * 0.48,
+                  childAspectRatio: MediaQuery.of(context).size.width /
+                      MediaQuery.of(context).size.height,
+                ),
+                itemCount: listofBarangExplore.length,
+                itemBuilder: ((context, index) {
+                  return Container(
+                    child: Container(
+                      padding: EdgeInsets.symmetric(horizontal: 5),
+                      margin: EdgeInsets.only(bottom: 20),
+                      child: CustomDropDownBarang(
+                          barangModelExplore: listofBarangExplore[index]),
+                    ),
+                    //  Row(
+                    //   children: [
+                    //     ListViewSemuaProduk(
+                    //       semuaProductModel: listSemuaProduct[index],
+                    //     ),
+                    //   ],
+                    // ),
+                  );
+                })),
+          ),
         );
     //end of widget Barang
 
@@ -224,19 +283,6 @@ class _ExplorePageState extends State<ExplorePage>
           ),
         );
 
-    // Container(
-    //       padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
-    //       margin: EdgeInsets.symmetric(horizontal: ScreenWidth * 0.015),
-    //       // margin: EdgeInsets.only(left: 10, right: 10),
-    //       child: Column(
-    //         children: [
-    //           SizedBox(
-    //             height: 20,
-    //           ),
-    //
-    //           const SizedBox(height: 20.0),
-    //           // list of mall
-    //
     //end of widget barang
 
     //end of mall widget
@@ -325,11 +371,11 @@ class _ExplorePageState extends State<ExplorePage>
         ),
       ),
       body: TabBarView(
+        physics: NeverScrollableScrollPhysics(),
         controller: _tabController,
         children: [
           Toko(),
-          SingleChildScrollView(
-              physics: BouncingScrollPhysics(), child: Barang()),
+          Barang(),
           Mall(),
         ],
       ),

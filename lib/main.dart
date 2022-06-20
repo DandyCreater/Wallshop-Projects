@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:slicing_homepage/pages/home/homepage.dart';
+import 'package:slicing_homepage/pages/home/rank_homepage.screen.dart';
 import 'package:slicing_homepage/splashscreen.dart';
 import 'pages/master_page.dart';
 
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => SplashScreen(),
         '/master': (context) => MasterPage(),
         '/dashboard': (context) => HomePage(),
+        '/rank': (context) => RankHomeScreen()
       },
     );
   }

@@ -96,61 +96,6 @@ List<ProductStore> listProductLainnya = [
 ];
 
 //List HomePage
-
-List<ProductStore> listItemPopuler = [
-  ProductStore(
-      imageUrl: "assets/images/tshirt.png",
-      name: "Tshirt Chicago Bulls",
-      price: 79000,
-      discPrice: 50000,
-      discon: 29),
-  ProductStore(
-      imageUrl: "assets/images/shoes.png",
-      name: "Nike Air Versitile II",
-      price: 8000000,
-      discPrice: 50000,
-      discon: 29),
-  ProductStore(
-      imageUrl: "assets/images/supreme.png",
-      name: "Supreme Cash Gun",
-      price: 1150000,
-      discPrice: 50000,
-      discon: 29),
-  ProductStore(
-      imageUrl: "assets/images/elon.png",
-      name: "Buku Elon Musk",
-      price: 70000,
-      discPrice: 50000,
-      discon: 29)
-];
-
-List<ProductStore> listPromoSpesial = [
-  ProductStore(
-      imageUrl: "assets/images/elon.png",
-      name: "Buku Elon Musk",
-      price: 70000,
-      discPrice: 50000,
-      discon: 29),
-  ProductStore(
-      imageUrl: "assets/images/asusrog.png",
-      name: "Asus ROG i7-8750H",
-      price: 14070000,
-      discPrice: 50000,
-      discon: 29),
-  ProductStore(
-      imageUrl: "assets/images/bukustartup.png",
-      name: "Buku startup",
-      price: 70000,
-      discPrice: 50000,
-      discon: 29),
-  ProductStore(
-      imageUrl: "assets/images/bukustartup.png",
-      name: "Buku startup",
-      price: 70000,
-      discPrice: 50000,
-      discon: 29),
-];
-
 class SemuaProductModel {
   final String imageUrl;
   final String name;

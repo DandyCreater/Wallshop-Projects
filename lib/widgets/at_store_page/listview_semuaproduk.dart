@@ -3,6 +3,7 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
+import 'package:slicing_homepage/models/homepage/homepage_model.dart';
 import 'package:slicing_homepage/models/product_store_model.dart';
 
 class ListViewSemuaProduk extends StatelessWidget {
@@ -29,7 +30,7 @@ class ListViewSemuaProduk extends StatelessWidget {
           margin: EdgeInsets.only(
             top: MediaQuery.of(context).size.height * 0.17,
           ),
-          height: MediaQuery.of(context).size.height * 0.176,
+          height: MediaQuery.of(context).size.height * 0.2,
           width: MediaQuery.of(context).size.width * 0.417,
           decoration: BoxDecoration(
               boxShadow: [

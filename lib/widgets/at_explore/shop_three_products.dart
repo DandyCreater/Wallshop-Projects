@@ -16,7 +16,7 @@ class ShopThreeProducts extends StatelessWidget {
       margin: const EdgeInsets.only(top: 5.0, bottom: 5.0),
       padding: EdgeInsets.only(left: 11.0, top: 11.0, bottom: 11.0),
       width: MediaQuery.of(context).size.width * 0.9,
-      height: MediaQuery.of(context).size.height * 0.28,
+      height: MediaQuery.of(context).size.height * 0.3,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(8),
@@ -37,8 +37,17 @@ class ShopThreeProducts extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  CircleAvatar(
-                    backgroundImage: AssetImage('assets/icons/icon_shop.png'),
+                  Container(
+                    height: 40,
+                    width: 40,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Color(0xffFFBA1E),
+                      image: DecorationImage(
+                        scale: 1.75,
+                        image: AssetImage("assets/icons/icon_small_store.png"),
+                      ),
+                    ),
                   ),
                   const SizedBox(width: 10.0),
                   Column(

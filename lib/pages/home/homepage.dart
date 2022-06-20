@@ -1,6 +1,7 @@
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:slicing_homepage/models/homepage/homepage_model.dart';
 import 'package:slicing_homepage/models/populer_model.dart';
 import 'package:slicing_homepage/models/product_store_model.dart';
 import 'package:slicing_homepage/widgets/at_homepage/features.dart';
@@ -118,27 +119,32 @@ class _HomePageState extends State<HomePage> {
                                 ],
                               ),
                             ),
-                            Container(
-                              width: 100.0,
-                              height: 40.0,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(15.0),
-                                color: Colors.black.withOpacity(.1),
+                            InkWell(
+                              onTap: () {
+                                Navigator.pushNamed(context, '/rank');
+                              },
+                              child: Container(
+                                width: 100.0,
+                                height: 40.0,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                  color: Colors.black.withOpacity(.1),
+                                ),
+                                child: Center(
+                                    child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Image.asset('assets/icons/icon_crown.png'),
+                                    Text(
+                                      "Rank",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    const SizedBox(width: 10.0),
+                                  ],
+                                )),
                               ),
-                              child: Center(
-                                  child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Image.asset('assets/icons/icon_crown.png'),
-                                  Text(
-                                    "Rank",
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.bold),
-                                  ),
-                                  const SizedBox(width: 10.0),
-                                ],
-                              )),
                             ),
                           ],
                         ),
@@ -165,19 +171,20 @@ class _HomePageState extends State<HomePage> {
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.015,
                     ),
-                    Container(
-                      height: 175,
-                      // height: MediaQuery.of(context).size.height * 0.24,
-                      // width: MediaQuery.of(context).size.width * 0.95,
+                    SizedBox(
+                      height: 240,
                       child: ListView.builder(
-                          physics: BouncingScrollPhysics(),
+                          padding: EdgeInsets.only(left: 20),
                           scrollDirection: Axis.horizontal,
                           itemCount: listItemPopuler.length,
                           itemBuilder: ((context, index) {
                             return Row(
                               children: [
                                 ListViewItem(
-                                    productStore: listItemPopuler[index]),
+                                    homePageItem: listItemPopuler[index]),
+                                SizedBox(
+                                  width: 10,
+                                ),
                               ],
                             );
                           })),
@@ -191,7 +198,7 @@ class _HomePageState extends State<HomePage> {
                       padding: EdgeInsets.only(left: 20.0, right: 15.0),
                       child: Container(
                         width: double.infinity,
-                        height: MediaQuery.of(context).size.height * 0.15,
+                        height: MediaQuery.of(context).size.height * 0.16,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -278,8 +285,9 @@ class _HomePageState extends State<HomePage> {
                       height: MediaQuery.of(context).size.height * 0.014,
                     ),
                     Container(
-                      height: 175,
+                      height: 240,
                       child: ListView.builder(
+                          padding: EdgeInsets.only(left: 20),
                           physics: BouncingScrollPhysics(),
                           scrollDirection: Axis.horizontal,
                           itemCount: listPromoSpesial.length,
@@ -287,7 +295,10 @@ class _HomePageState extends State<HomePage> {
                             return Row(
                               children: [
                                 ListViewItem(
-                                    productStore: listPromoSpesial[index]),
+                                    homePageItem: listPromoSpesial[index]),
+                                SizedBox(
+                                  width: 10,
+                                ),
                               ],
                             );
                           })),

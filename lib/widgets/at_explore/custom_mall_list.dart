@@ -41,35 +41,33 @@ class CustomMallList extends StatelessWidget {
               image: DecorationImage(
                   image: AssetImage(mallModel.imageUrl), fit: BoxFit.cover)),
         ),
-        Container(
-          padding: EdgeInsets.fromLTRB(10, 19, 0, 0),
+        Flexible(
+          fit: FlexFit.tight,
+          flex: 8,
           child: Container(
-            width: ScreenWidth * 0.45,
+            padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   mallModel.name,
                   style: GoogleFonts.roboto(
-                      fontSize: 20,
+                      fontSize: 16,
                       fontWeight: FontWeight.w500,
                       color: Color(0xff393C43)),
                 ),
                 SizedBox(
-                  height: 5,
+                  height: 3,
                 ),
-                Container(
-                  child: Text(
-                    mallModel.address,
-                    style: GoogleFonts.roboto(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w500,
-                        color: Color(0xff757575)),
-                    textAlign: TextAlign.justify,
-                  ),
+                Text(
+                  mallModel.address,
+                  style: GoogleFonts.roboto(
+                      fontSize: 13,
+                      fontWeight: FontWeight.w500,
+                      color: Color(0xff757575)),
                 ),
                 SizedBox(
-                  height: 10,
+                  height: 5,
                 ),
                 Row(
                   children: [
@@ -99,12 +97,12 @@ class CustomMallList extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(
-          width: 35,
-        ),
-        Icon(
-          Icons.arrow_forward_ios,
-          size: 15,
+        Flexible(
+          fit: FlexFit.tight,
+          child: Icon(
+            Icons.arrow_forward_ios,
+            size: 15,
+          ),
         ),
       ]),
     );

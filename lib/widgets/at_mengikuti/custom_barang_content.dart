@@ -39,36 +39,39 @@ class CustomBarangContent extends StatelessWidget {
                   SizedBox(
                     width: 10,
                   ),
-                  Container(
-                    height: ScreenHeight * 0.04,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          barangModel.namaToko,
-                          style: GoogleFonts.roboto(
-                              fontSize: 13,
-                              fontWeight: FontWeight.w500,
-                              color: Color(0xff27282C)),
-                        ),
-                        SizedBox(
-                          width: 3,
-                        ),
-                        Text(
-                          barangModel.kondisiProduk,
-                          style: GoogleFonts.roboto(
-                              fontSize: 11,
-                              fontWeight: FontWeight.w500,
-                              color: Color(0xff63767E)),
-                        ),
-                      ],
+                  Flexible(
+                    flex: 8,
+                    fit: FlexFit.tight,
+                    child: Container(
+                      height: ScreenHeight * 0.04,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            barangModel.namaToko,
+                            style: GoogleFonts.roboto(
+                                fontSize: 13,
+                                fontWeight: FontWeight.w500,
+                                color: Color(0xff27282C)),
+                          ),
+                          SizedBox(
+                            width: 3,
+                          ),
+                          Text(
+                            barangModel.kondisiProduk,
+                            style: GoogleFonts.roboto(
+                                fontSize: 11,
+                                fontWeight: FontWeight.w500,
+                                color: Color(0xff63767E)),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                  SizedBox(
-                    width: ScreenWidth * 0.57,
-                  ),
-                  Expanded(
+                  Flexible(
+                    flex: 2,
+                    fit: FlexFit.tight,
                     child: Container(
                       height: ScreenHeight * 0.03,
                       width: ScreenWidth * 0.074,
@@ -127,11 +130,6 @@ class CustomBarangContent extends StatelessWidget {
                   height: ScreenHeight * 0.029,
                   width: ScreenWidth * 0.055,
                   child: SvgPicture.asset("assets/icons/icon_like.svg"),
-                  // decoration: BoxDecoration(
-                  //   image: DecorationImage(
-                  //       image: AssetImage("assets/icons/icon_like.png"),
-                  //       fit: BoxFit.cover),
-                  // ),
                 ),
                 SizedBox(
                   width: 23,
@@ -144,24 +142,23 @@ class CustomBarangContent extends StatelessWidget {
                 SizedBox(
                   width: 23,
                 ),
-                Container(
-                  height: ScreenHeight * 0.029,
-                  width: ScreenWidth * 0.055,
-                  child: SvgPicture.asset("assets/icons/icon_share.svg"),
+                Flexible(
+                  fit: FlexFit.tight,
+                  flex: 8,
+                  child: Container(
+                    height: ScreenHeight * 0.029,
+                    child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: SvgPicture.asset("assets/icons/icon_share.svg")),
+                  ),
                 ),
-                SizedBox(
-                  width: ScreenWidth * 0.59,
-                ),
-                Expanded(
+                Flexible(
+                  fit: FlexFit.tight,
+                  flex: 2,
                   child: Container(
                     height: ScreenHeight * 0.029,
                     width: ScreenWidth * 0.055,
                     child: SvgPicture.asset("assets/icons/icon_saved.svg"),
-                    // decoration: BoxDecoration(
-                    //   image: DecorationImage(
-                    //       image: ("assets/icons/icon_saved.svg"),
-                    //       fit: BoxFit.cover),
-                    // ),
                   ),
                 ),
               ]),
@@ -183,7 +180,6 @@ class CustomBarangContent extends StatelessWidget {
               height: 4,
             ),
             Container(
-              width: ScreenWidth * 0.9,
               padding: EdgeInsets.symmetric(horizontal: ScreenWidth * 0.042),
               child: Row(children: [
                 Text(barangModel.namaToko,
@@ -195,14 +191,17 @@ class CustomBarangContent extends StatelessWidget {
                 SizedBox(
                   width: 3,
                 ),
-                Text(
-                  barangModel.deskripsi,
-                  style: GoogleFonts.roboto(
-                    fontSize: 13,
-                    fontWeight: FontWeight.w400,
-                    color: Color(0xff27282C),
+                Flexible(
+                  fit: FlexFit.tight,
+                  child: Text(
+                    barangModel.deskripsi,
+                    style: GoogleFonts.roboto(
+                      fontSize: 13,
+                      fontWeight: FontWeight.w400,
+                      color: Color(0xff27282C),
+                    ),
+                    // textAlign: TextAlign.justify,
                   ),
-                  textAlign: TextAlign.justify,
                 ),
               ]),
             ),
