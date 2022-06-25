@@ -4,11 +4,14 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:md2_tab_indicator/md2_tab_indicator.dart';
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:slicing_homepage/models/explore/barang/barang_model.dart';
+import 'package:slicing_homepage/models/explore/dropdown/dropdown_explore_model.dart';
 import 'package:slicing_homepage/models/mengikuti_model.dart';
 import 'package:slicing_homepage/models/mall_model.dart';
 import 'package:slicing_homepage/models/product_store_model.dart';
 import 'package:slicing_homepage/models/store_model.dart';
+import 'package:slicing_homepage/widgets/at_explore/custom_bottomsheet.dart';
 import 'package:slicing_homepage/widgets/at_explore/custom_dropdown.dart';
 import 'package:slicing_homepage/widgets/at_explore/custom_dropdown_barang.dart';
 import 'package:slicing_homepage/widgets/at_explore/custom_mall_list.dart';
@@ -51,13 +54,83 @@ class _ExplorePageState extends State<ExplorePage>
                     elevation: 0,
                     title: Container(
                       height: 30,
-                      // width: ScreenWidth,
                       child: Row(
-                        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          CustomDropDown(title: 'Kategori'),
+                          CustomDropDown(
+                            title: "Kategori",
+                            press: () {
+                              showCupertinoModalBottomSheet(
+                                  barrierColor: Colors.black.withOpacity(0.6),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10.0),
+                                  ),
+                                  context: context,
+                                  builder: (builder) {
+                                    return Container(
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 20),
+                                      height:
+                                          MediaQuery.of(context).size.height *
+                                              0.75,
+                                      decoration: const BoxDecoration(
+                                        borderRadius: BorderRadius.only(
+                                            topLeft: Radius.circular(10),
+                                            topRight: Radius.circular(10)),
+                                        color: Colors.white,
+                                      ),
+                                      child: ListView.builder(
+                                          itemCount: listKategoriExplore.length,
+                                          itemBuilder: ((context, index) {
+                                            return CustomButtomSheet(
+                                              exploreModel:
+                                                  listKategoriExplore[index],
+                                              press: () {
+                                                Navigator.pop(context);
+                                              },
+                                            );
+                                          })),
+                                    );
+                                  });
+                            },
+                          ),
                           const SizedBox(width: 10.0),
-                          CustomDropDown(title: 'Lokasi'),
+                          CustomDropDown(
+                            title: "Lokasi",
+                            press: () {
+                              showCupertinoModalBottomSheet(
+                                  barrierColor: Colors.black.withOpacity(0.6),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10.0),
+                                  ),
+                                  context: context,
+                                  builder: (builder) {
+                                    return Container(
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 20),
+                                      height:
+                                          MediaQuery.of(context).size.height *
+                                              0.75,
+                                      decoration: const BoxDecoration(
+                                        borderRadius: BorderRadius.only(
+                                            topLeft: Radius.circular(10),
+                                            topRight: Radius.circular(10)),
+                                        color: Colors.white,
+                                      ),
+                                      child: ListView.builder(
+                                          itemCount: listLokasiExplore.length,
+                                          itemBuilder: ((context, index) {
+                                            return CustomButtomSheet(
+                                              exploreModel:
+                                                  listLokasiExplore[index],
+                                              press: () {
+                                                Navigator.pop(context);
+                                              },
+                                            );
+                                          })),
+                                    );
+                                  });
+                            },
+                          ),
                           const SizedBox(width: 10.0),
                           Container(
                             padding: EdgeInsets.only(left: 10),
@@ -146,11 +219,20 @@ class _ExplorePageState extends State<ExplorePage>
                       SizedBox(
                         width: 10,
                       ),
-                      CustomDropDown(title: 'Kategori'),
+                      CustomDropDown(
+                        title: 'Kategori',
+                        press: () {},
+                      ),
                       const SizedBox(width: 10.0),
-                      CustomDropDown(title: 'Lokasi'),
+                      CustomDropDown(
+                        title: 'Lokasi',
+                        press: () {},
+                      ),
                       const SizedBox(width: 10.0),
-                      CustomDropDown(title: 'Urutkan'),
+                      CustomDropDown(
+                        title: 'Urutkan',
+                        press: () {},
+                      ),
                       const SizedBox(width: 10.0),
                     ],
                   ),
@@ -216,7 +298,10 @@ class _ExplorePageState extends State<ExplorePage>
                       SizedBox(
                         width: 15,
                       ),
-                      CustomDropDown(title: 'Lokasi'),
+                      CustomDropDown(
+                        title: 'Lokasi',
+                        press: () {},
+                      ),
                       const SizedBox(width: 10.0),
                       Container(
                         padding: EdgeInsets.only(left: 10),

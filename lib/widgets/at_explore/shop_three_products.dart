@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:slicing_homepage/models/store_model.dart';
 import 'package:slicing_homepage/pages/storepage/store_page.dart';
 
@@ -55,7 +56,9 @@ class ShopThreeProducts extends StatelessWidget {
                     children: [
                       Text(
                         "${storeModel.storeName}",
-                        style: TextStyle(fontWeight: FontWeight.w600),
+                        style: GoogleFonts.roboto(
+                            color: Color(0xff393C43),
+                            fontWeight: FontWeight.w600),
                         overflow: TextOverflow.ellipsis,
                       ),
                       RichText(
@@ -64,13 +67,14 @@ class ShopThreeProducts extends StatelessWidget {
                           children: [
                             TextSpan(
                                 text: "Manado - Sekitar ",
-                                style: TextStyle(color: Color(0xff63767e))),
+                                style: GoogleFonts.roboto(
+                                    color: Color(0xff63767e))),
                             TextSpan(
-                              text: "${storeModel.kiloMeter} Km",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                overflow: TextOverflow.ellipsis,
-                              ),
+                              text:
+                                  "${storeModel.kiloMeter}${storeModel.jarak}",
+                              style: GoogleFonts.roboto(
+                                  fontWeight: FontWeight.bold,
+                                  color: Color(0xff63767e)),
                             ),
                           ],
                         ),

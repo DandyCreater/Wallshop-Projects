@@ -14,7 +14,7 @@ class ListViewTokoPopuler extends StatelessWidget {
     var ScreenHeight = MediaQuery.of(context).size.height;
     var ScreenWidth = MediaQuery.of(context).size.width;
     return Container(
-      margin: EdgeInsets.only(left: 20),
+      // margin: EdgeInsets.only(left: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

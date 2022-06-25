@@ -181,29 +181,46 @@ class CustomBarangContent extends StatelessWidget {
             ),
             Container(
               padding: EdgeInsets.symmetric(horizontal: ScreenWidth * 0.042),
-              child: Row(children: [
-                Text(barangModel.namaToko,
-                    style: GoogleFonts.roboto(
-                      fontSize: 13,
+              child: RichText(
+                text: TextSpan(
+                  text: barangModel.namaToko,
+                  style: GoogleFonts.roboto(
                       fontWeight: FontWeight.w500,
-                      color: Color(0xff27282C),
-                    )),
-                SizedBox(
-                  width: 3,
-                ),
-                Flexible(
-                  fit: FlexFit.tight,
-                  child: Text(
-                    barangModel.deskripsi,
-                    style: GoogleFonts.roboto(
                       fontSize: 13,
-                      fontWeight: FontWeight.w400,
-                      color: Color(0xff27282C),
-                    ),
-                    // textAlign: TextAlign.justify,
-                  ),
+                      color: Color(0xff27282C)),
+                  children: <TextSpan>[
+                    TextSpan(
+                        text: barangModel.deskripsi,
+                        style: GoogleFonts.roboto(
+                            color: Color(0xff27282C),
+                            fontWeight: FontWeight.w400,
+                            fontSize: 13)),
+                  ],
                 ),
-              ]),
+              ),
+              // Row(children: [
+              //   Text(barangModel.namaToko,
+              //       style: GoogleFonts.roboto(
+              //         fontSize: 13,
+              //         fontWeight: FontWeight.w500,
+              //         color: Color(0xff27282C),
+              //       )),
+              //   SizedBox(
+              //     width: 3,
+              //   ),
+              //   Flexible(
+              //     fit: FlexFit.tight,
+              //     child: Text(
+              //       barangModel.deskripsi,
+              //       style: GoogleFonts.roboto(
+              //         fontSize: 13,
+              //         fontWeight: FontWeight.w400,
+              //         color: Color(0xff27282C),
+              //       ),
+              //       // textAlign: TextAlign.justify,
+              //     ),
+              //   ),
+              // ]),
             ),
             SizedBox(
               height: 6,

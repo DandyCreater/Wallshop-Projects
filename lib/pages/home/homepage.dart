@@ -75,15 +75,15 @@ class _HomePageState extends State<HomePage> {
                         margin: const EdgeInsets.all(3.0),
                         padding: const EdgeInsets.all(10.0),
                         width: double.infinity,
-                        height: 80.0,
+                        height: 65.0,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(15.0),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.black26,
-                              offset: Offset(0, 2),
-                              blurRadius: 4.0,
+                              color: Colors.black26.withOpacity(0.2),
+                              offset: Offset(0, 1),
+                              blurRadius: 1.0,
                             ),
                           ],
                         ),
@@ -104,7 +104,11 @@ class _HomePageState extends State<HomePage> {
                                 children: [
                                   Row(
                                     children: [
-                                      Text('Wallshop poin '),
+                                      Text('Total Belanja',
+                                          style: GoogleFonts.poppins(
+                                              color: Color(0xff4D4D4D),
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.w400)),
                                       Icon(
                                         Icons.chevron_right,
                                         color: Colors.red.shade900,
@@ -112,9 +116,11 @@ class _HomePageState extends State<HomePage> {
                                     ],
                                   ),
                                   Text(
-                                    '1200 poin',
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.bold),
+                                    'IDR 297,900,000',
+                                    style: GoogleFonts.poppins(
+                                        fontWeight: FontWeight.w700,
+                                        color: Color(0xff3F3F3F),
+                                        fontSize: 12),
                                   ),
                                 ],
                               ),
@@ -124,11 +130,11 @@ class _HomePageState extends State<HomePage> {
                                 Navigator.pushNamed(context, '/rank');
                               },
                               child: Container(
-                                width: 100.0,
+                                width: 120.0,
                                 height: 40.0,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(15.0),
-                                  color: Colors.black.withOpacity(.1),
+                                  color: Color(0xffF9FAFC),
                                 ),
                                 child: Center(
                                     child: Row(
@@ -137,9 +143,11 @@ class _HomePageState extends State<HomePage> {
                                   children: [
                                     Image.asset('assets/icons/icon_crown.png'),
                                     Text(
-                                      "Rank",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold),
+                                      "Lihat Rank",
+                                      style: GoogleFonts.roboto(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w400,
+                                          color: Color(0xff3F3F3F)),
                                     ),
                                     const SizedBox(width: 10.0),
                                   ],
@@ -172,7 +180,7 @@ class _HomePageState extends State<HomePage> {
                       height: MediaQuery.of(context).size.height * 0.015,
                     ),
                     SizedBox(
-                      height: 240,
+                      height: 220,
                       child: ListView.builder(
                           padding: EdgeInsets.only(left: 20),
                           scrollDirection: Axis.horizontal,
@@ -198,9 +206,8 @@ class _HomePageState extends State<HomePage> {
                       padding: EdgeInsets.only(left: 20.0, right: 15.0),
                       child: Container(
                         width: double.infinity,
-                        height: MediaQuery.of(context).size.height * 0.16,
+                        height: MediaQuery.of(context).size.height * 0.1485,
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Features(
                               title: 'Antar',
@@ -208,7 +215,7 @@ class _HomePageState extends State<HomePage> {
                               imageUrl: 'assets/images/slider3_1.png',
                             ),
                             SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.04,
+                              width: MediaQuery.of(context).size.width * 0.02,
                             ),
                             Features(
                               title: 'Ambil',
@@ -243,8 +250,10 @@ class _HomePageState extends State<HomePage> {
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.014,
                     ),
+
                     Container(
                       height: 175,
+                      padding: EdgeInsets.only(left: 20),
                       child: ListView.builder(
                           physics: BouncingScrollPhysics(),
                           scrollDirection: Axis.horizontal,
@@ -254,6 +263,9 @@ class _HomePageState extends State<HomePage> {
                               children: [
                                 ListViewTokoPopuler(
                                   tokoPopulerModel: tokoPopulerList[index],
+                                ),
+                                SizedBox(
+                                  width: 5,
                                 ),
                               ],
                             );
@@ -285,7 +297,7 @@ class _HomePageState extends State<HomePage> {
                       height: MediaQuery.of(context).size.height * 0.014,
                     ),
                     Container(
-                      height: 240,
+                      height: 220,
                       child: ListView.builder(
                           padding: EdgeInsets.only(left: 20),
                           physics: BouncingScrollPhysics(),
@@ -306,6 +318,43 @@ class _HomePageState extends State<HomePage> {
                     //end of Promo Spesial
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.04,
+                    ),
+                    //Rekomendasi
+                    Padding(
+                      padding: const EdgeInsets.only(left: 20, right: 20.0),
+                      child: Text(
+                        "Rekomendasi Untuk Kamu",
+                        style: GoogleFonts.poppins(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.black),
+                      ),
+                    ),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.014,
+                    ),
+                    Container(
+                      height: 220,
+                      child: ListView.builder(
+                          padding: EdgeInsets.only(left: 20),
+                          physics: BouncingScrollPhysics(),
+                          scrollDirection: Axis.horizontal,
+                          itemCount: listRekomendasi.length,
+                          itemBuilder: ((context, index) {
+                            return Row(
+                              children: [
+                                ListViewItem(
+                                    homePageItem: listRekomendasi[index]),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                              ],
+                            );
+                          })),
+                    ),
+                    //end of Rekomendasi
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.02,
                     ),
                   ],
                 ),

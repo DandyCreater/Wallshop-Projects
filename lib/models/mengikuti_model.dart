@@ -21,7 +21,7 @@ class BarangModel {
 
 List<BarangModel> barangModelList = [
   BarangModel(
-      namaToko: "Inception Mart",
+      namaToko: "Inception Mart ",
       kondisiProduk: "Produk baru",
       imageUrlToko: "assets/icons/icon_shop.png",
       imageUrl: "assets/images/robot_mobil.png",
@@ -30,7 +30,7 @@ List<BarangModel> barangModelList = [
       waktu: 2,
       deskripsi: "Lorem ipsum dolor sit amet, consectetur"),
   BarangModel(
-      namaToko: "Inception Mart",
+      namaToko: "Inception Mart ",
       kondisiProduk: "Produk baru",
       imageUrlToko: "assets/icons/icon_shop.png",
       imageUrl: "assets/images/robot_merah.png",
@@ -39,7 +39,7 @@ List<BarangModel> barangModelList = [
       waktu: 2,
       deskripsi: "Lorem ipsum dolor sit amet, consectetur"),
   BarangModel(
-      namaToko: "Inception Mart",
+      namaToko: "Inception Mart ",
       kondisiProduk: "Produk baru",
       imageUrlToko: "assets/icons/icon_shop.png",
       imageUrl: "assets/images/robot_biru.png",
@@ -48,7 +48,7 @@ List<BarangModel> barangModelList = [
       waktu: 2,
       deskripsi: "Lorem ipsum dolor sit amet, consectetur"),
   BarangModel(
-      namaToko: "Manado Pet Store",
+      namaToko: "Manado Pet Store ",
       kondisiProduk: "Produk baru",
       imageUrlToko: "assets/icons/icon_shop.png",
       imageUrl: "assets/images/shark.png",
@@ -57,7 +57,7 @@ List<BarangModel> barangModelList = [
       waktu: 2,
       deskripsi: "Lorem ipsum dolor sit amet, consectetur"),
   BarangModel(
-      namaToko: "Manado Pet Store",
+      namaToko: "Manado Pet Store ",
       kondisiProduk: "Produk baru",
       imageUrlToko: "assets/icons/icon_shop.png",
       imageUrl: "assets/images/bunglon.png",
@@ -66,7 +66,7 @@ List<BarangModel> barangModelList = [
       waktu: 2,
       deskripsi: "Lorem ipsum dolor sit amet, consectetur"),
   BarangModel(
-      namaToko: "Manado Pet Store",
+      namaToko: "Manado Pet Store ",
       kondisiProduk: "Produk baru",
       imageUrlToko: "assets/icons/icon_shop.png",
       imageUrl: "assets/images/fish.png",

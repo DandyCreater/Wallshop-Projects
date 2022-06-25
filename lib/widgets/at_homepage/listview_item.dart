@@ -36,7 +36,7 @@ class ListViewItem extends StatelessWidget {
               top: 99,
             ),
             width: 97,
-            height: 125,
+            height: 108,
             decoration: BoxDecoration(
                 boxShadow: [
                   BoxShadow(
@@ -54,18 +54,18 @@ class ListViewItem extends StatelessWidget {
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Flexible(
                 child: Container(
-                  height: 35,
+                  height: 30,
                   child: Text(
                     homePageItem.name,
                     style: GoogleFonts.roboto(
                         color: Color(0xff3F3F3F),
-                        fontSize: 10,
+                        fontSize: 8,
                         fontWeight: FontWeight.w400),
                   ),
                 ),
               ),
               SizedBox(
-                height: 10,
+                height: 5,
               ),
               Text(
                 NumberFormat.currency(

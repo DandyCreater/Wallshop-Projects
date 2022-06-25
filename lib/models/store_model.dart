@@ -3,19 +3,20 @@ import 'product_model.dart';
 class StoreModel {
   final String storeName;
   final int kiloMeter;
+  final String jarak;
   final List<ProductModel> product;
 
-  StoreModel({
-    required this.storeName,
-    required this.kiloMeter,
-    required this.product,
-  });
+  StoreModel(
+      {required this.storeName,
+      required this.kiloMeter,
+      required this.product,
+      required this.jarak});
 }
 
 List<StoreModel> listOfStore = [
   StoreModel(
     storeName: 'Pixel Mart',
-    kiloMeter: 5,
+    kiloMeter: 200,
     product: [
       ProductModel(
         name: 'Tshirt Chicago Bulls',
@@ -36,6 +37,7 @@ List<StoreModel> listOfStore = [
         imageUrl: 'assets/images/supreme.png',
       ),
     ],
+    jarak: 'm',
   ),
   StoreModel(
     storeName: 'Inception Mart',
@@ -60,6 +62,7 @@ List<StoreModel> listOfStore = [
         imageUrl: 'assets/images/black_car_robot_product.png',
       ),
     ],
+    jarak: 'Km',
   ),
   StoreModel(
     storeName: 'Exotic Pet Store',
@@ -84,6 +87,7 @@ List<StoreModel> listOfStore = [
         imageUrl: 'assets/images/exotic3.png',
       ),
     ],
+    jarak: 'Km',
   ),
   StoreModel(
     storeName: 'Samsan Bookstore',
@@ -108,6 +112,7 @@ List<StoreModel> listOfStore = [
         imageUrl: 'assets/images/public_speaking.png',
       ),
     ],
+    jarak: 'Km',
   ),
   StoreModel(
     storeName: 'Manado Fish Store',
@@ -132,5 +137,6 @@ List<StoreModel> listOfStore = [
         imageUrl: 'assets/images/purple_fish.png',
       ),
     ],
+    jarak: 'Km',
   ),
 ];

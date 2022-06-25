@@ -43,7 +43,35 @@ List<HomePageItem> listItemPopuler = [
       price: 12999000,
       discPrice: 16768000,
       discon: 29,
-      city: 'Kota Manado')
+      city: 'Kota Manado'),
+  HomePageItem(
+      imageUrl: "assets/images/robot_biru.png",
+      name: "Humanoid Robotic with AI by Vijay V Shah",
+      price: 11999000,
+      discPrice: 15480000,
+      discon: 29,
+      city: 'Kota Manado'),
+  HomePageItem(
+      imageUrl: "assets/images/dog_robot_product.png",
+      name: "Sony Aibo The intelligent Pet Robot",
+      price: 98000000,
+      discPrice: 10320000,
+      discon: 29,
+      city: 'Kota Manado'),
+  HomePageItem(
+      imageUrl: "assets/images/red_robot_product.png",
+      name: "Humanoid Robotic with AI by Vijay V Shah Ora",
+      price: 15499000,
+      discPrice: 20000000,
+      discon: 29,
+      city: 'Kota Manado'),
+  HomePageItem(
+      imageUrl: "assets/images/black_car_robot_product.png",
+      name: "Original Vector Robot Tipe Vector By Anki",
+      price: 5499000,
+      discPrice: 7100000,
+      discon: 29,
+      city: 'Kota Manado'),
 ];
 
 List<HomePageItem> listPromoSpesial = [
@@ -63,7 +91,7 @@ List<HomePageItem> listPromoSpesial = [
       city: 'Kota Manado'),
   HomePageItem(
       imageUrl: "assets/images/spider.png",
-      name: "Mexican redleg tarantula female size 9cm",
+      name: "Mexican redleg tarantula female",
       price: 799000,
       discPrice: 1100000,
       discon: 29,
@@ -71,8 +99,74 @@ List<HomePageItem> listPromoSpesial = [
   HomePageItem(
       imageUrl: "assets/images/red_robot_product.png",
       name: "Supreme Cash Gun",
+      price: 15499000,
+      discPrice: 20000000,
+      discon: 29,
+      city: 'Kota Manado'),
+  HomePageItem(
+      imageUrl: "assets/images/black_car_robot_product.png",
+      name: "Original Vector Robot Tipe Vector By Anki",
+      price: 5499000,
+      discPrice: 7100000,
+      discon: 29,
+      city: 'Kota Manado'),
+];
+
+List<HomePageItem> listRekomendasi = [
+  HomePageItem(
+      imageUrl: "assets/images/white_car_robot_product.png",
+      name: "Original Vector Robot Tipe Cozmo by Anki",
+      price: 59900000,
+      discPrice: 7740000,
+      discon: 29,
+      city: 'Kota Manado'),
+  HomePageItem(
+      imageUrl: "assets/images/black_car_robot_product.png",
+      name: "Original Vector Robot Tipe Vector by Anki",
+      price: 5499000,
+      discPrice: 7100000,
+      discon: 29,
+      city: 'Kota Manado'),
+  HomePageItem(
+      imageUrl: "assets/images/fixed_red_robot.png",
+      name: "Humanoid Robotic with AI by Vijay V Shah",
       price: 12999000,
       discPrice: 16768000,
+      discon: 29,
+      city: 'Kota Manado'),
+  HomePageItem(
+      imageUrl: "assets/images/robot_biru.png",
+      name: "Humanoid Robotic with AI by Vijay V Shah",
+      price: 11999000,
+      discPrice: 15480000,
+      discon: 29,
+      city: 'Kota Manado'),
+  HomePageItem(
+      imageUrl: "assets/images/dog_robot_product.png",
+      name: "Sony Aibo The intelligent Pet Robot",
+      price: 98000000,
+      discPrice: 10320000,
+      discon: 29,
+      city: 'Kota Manado'),
+  HomePageItem(
+      imageUrl: "assets/images/red_robot_product.png",
+      name: "Humanoid Robotic with AI by Vijay V Shah Ora",
+      price: 15499000,
+      discPrice: 20000000,
+      discon: 29,
+      city: 'Kota Manado'),
+  HomePageItem(
+      imageUrl: "assets/images/water_robot_product.png",
+      name: "Romi The intelligent Pet Robot by Vantage",
+      price: 5499000,
+      discPrice: 7100000,
+      discon: 29,
+      city: 'Kota Manado'),
+  HomePageItem(
+      imageUrl: "assets/images/small_white_robot_product.png",
+      name: "Domgy Roboo The intelligent Pet Robot",
+      price: 6599000,
+      discPrice: 8500000,
       discon: 29,
       city: 'Kota Manado'),
 ];

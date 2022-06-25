@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Features extends StatelessWidget {
   final String title;
@@ -15,7 +16,7 @@ class Features extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width / 2.33,
+      width: MediaQuery.of(context).size.width / 2.32,
       height: double.infinity,
       decoration: BoxDecoration(
         color: Colors.red.shade900,
@@ -32,26 +33,26 @@ class Features extends StatelessWidget {
           Column(
             children: [
               Padding(
-                padding: const EdgeInsets.all(20.0),
+                padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
                       "$title",
-                      style: TextStyle(
+                      style: GoogleFonts.roboto(
                           color: Colors.white,
                           fontSize: 15.0,
-                          fontWeight: FontWeight.bold),
+                          fontWeight: FontWeight.w700),
                     ),
                     Container(
-                      width: 60.0,
+                      width: 80.0,
                       child: Text(
                         "$subTitle",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 10.0,
-                        ),
+                        style: GoogleFonts.roboto(
+                            color: Colors.white,
+                            fontSize: 13.0,
+                            fontWeight: FontWeight.w400),
                       ),
                     ),
                     SizedBox(
@@ -63,6 +64,7 @@ class Features extends StatelessWidget {
                       child: Icon(
                         Icons.arrow_forward_sharp,
                         size: 15.0,
+                        color: Color(0xffBC1533),
                       ),
                     ),
                   ],
@@ -70,6 +72,7 @@ class Features extends StatelessWidget {
               ),
             ],
           ),
+
           // Image
         ],
       ),
