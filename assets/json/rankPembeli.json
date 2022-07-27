@@ -1,0 +1,68 @@
+{
+    "responseCode": "OK",
+    "OKContentRank": {
+        "item": [
+            {
+                "num": "1",
+                "imageUrl": "assets/images/seodalmi.png",
+                "title": "Seo Dal Mi",
+                "price": "0"
+            },
+            {
+                "num": "2",
+                "imageUrl": "assets/images/yoonseonhak.png",
+                "title": "Yoon Seon Hak",
+                "price": "0"
+            },
+            {
+                "num": "3",
+                "imageUrl": "assets/images/namdosan.png",
+                "title": "Nam Do-San",
+                "price": "0"
+            },
+            {
+                "num": "4",
+                "imageUrl": "assets/images/hanjipyeong.png",
+                "title": "Han Ji-Pyeong",
+                "price": "0"
+            },
+            {
+                "num": "5",
+                "imageUrl": "assets/images/woninjae.png",
+                "title": "Won In Jae",
+                "price": "0"
+            },
+            {
+                "num": "6",
+                "imageUrl": "assets/images/leecheolsan.png",
+                "title": "Lee Cheol San",
+                "price": "0"
+            },
+            {
+                "num": "7",
+                "imageUrl": "assets/images/kimyongsan.png",
+                "title": "Kim Yong San",
+                "price": "0"
+            },
+            {
+                "num": "8",
+                "imageUrl": "assets/images/jeongsaha.png",
+                "title": "Jeong Sa Ha",
+                "price": "0"
+            },
+            {
+                "num": "9",
+                "imageUrl": "assets/images/choiwondeok.png",
+                "title": "Choi Won Deok",
+                "price": "0"
+            },
+            {
+                "num": "10",
+                "imageUrl": "assets/images/chaahyeon.png",
+                "title": "Cha A Hyeon",
+                "price": "0"
+            }
+        ]
+    },
+    "failContent": ""
+}

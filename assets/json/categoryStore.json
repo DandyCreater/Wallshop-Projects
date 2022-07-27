@@ -1,0 +1,48 @@
+{
+    "ResponseCode": "OK",
+    "OKContentCategoryStore": {
+        "items": [
+            {
+                "imageUrl": "assets/images/box.png",
+                "title": "Semua Produk",
+                "jumlah": "120"
+            },
+            {
+                "imageUrl": "assets/images/supreme.png",
+                "title": "Kaos",
+                "jumlah": "60"
+            },
+            {
+                "imageUrl": "assets/images/jersey.png",
+                "title": "Jersey",
+                "jumlah": "20"
+            },
+            {
+                "imageUrl": "assets/images/shoes.png",
+                "title": "Sepatu",
+                "jumlah": "20"
+            },
+            {
+                "imageUrl": "assets/images/elon.png",
+                "title": "Buku",
+                "jumlah": "14"
+            },
+            {
+                "imageUrl": "assets/images/supreme.png",
+                "title": "Kaos",
+                "jumlah": "15"
+            },
+            {
+                "imageUrl": "assets/images/tshirt.png",
+                "title": "Jersey",
+                "jumlah": "14"
+            },
+            {
+                "imageUrl": "assets/images/shoes.png",
+                "title": "Sepatu",
+                "jumlah": "20"
+            }
+        ]
+    },
+    "failContent": ""
+}

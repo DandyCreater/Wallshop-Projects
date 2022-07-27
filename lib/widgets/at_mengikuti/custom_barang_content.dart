@@ -3,12 +3,28 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:slicing_homepage/models/mengikuti_model.dart';
+import 'package:slicing_homepage/domain/models/mengikuti/mengikuti_model.dart';
 
 class CustomBarangContent extends StatelessWidget {
-  final BarangModel barangModel;
-  const CustomBarangContent({Key? key, required this.barangModel})
-      : super(key: key);
+  final String namaToko;
+  final String kondisiProduk;
+  final String imageUrlToko;
+  final String imageUrl;
+  final String komentar;
+  final String likes;
+  final String waktu;
+  final String deskripsi;
+  const CustomBarangContent({
+    Key? key,
+    required this.namaToko,
+    required this.kondisiProduk,
+    required this.imageUrlToko,
+    required this.imageUrl,
+    required this.komentar,
+    required this.likes,
+    required this.waktu,
+    required this.deskripsi,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +49,7 @@ class CustomBarangContent extends StatelessWidget {
                     decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(
-                            image: AssetImage(barangModel.imageUrlToko),
+                            image: AssetImage(imageUrlToko),
                             fit: BoxFit.cover)),
                   ),
                   SizedBox(
@@ -49,7 +65,7 @@ class CustomBarangContent extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            barangModel.namaToko,
+                            namaToko,
                             style: GoogleFonts.roboto(
                                 fontSize: 13,
                                 fontWeight: FontWeight.w500,
@@ -59,7 +75,7 @@ class CustomBarangContent extends StatelessWidget {
                             width: 3,
                           ),
                           Text(
-                            barangModel.kondisiProduk,
+                            kondisiProduk,
                             style: GoogleFonts.roboto(
                                 fontSize: 11,
                                 fontWeight: FontWeight.w500,
@@ -89,8 +105,7 @@ class CustomBarangContent extends StatelessWidget {
               height: ScreenHeight * 0.51,
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage(barangModel.imageUrl),
-                      fit: BoxFit.cover)),
+                      image: AssetImage(imageUrl), fit: BoxFit.cover)),
             ),
             Container(
               padding: EdgeInsets.all(15),
@@ -169,7 +184,7 @@ class CustomBarangContent extends StatelessWidget {
             Container(
               padding: EdgeInsets.symmetric(horizontal: ScreenWidth * 0.042),
               child: Text(
-                "${barangModel.likes} likes",
+                "${likes} likes",
                 style: GoogleFonts.roboto(
                     fontSize: 12,
                     fontWeight: FontWeight.w600,
@@ -183,14 +198,14 @@ class CustomBarangContent extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: ScreenWidth * 0.042),
               child: RichText(
                 text: TextSpan(
-                  text: barangModel.namaToko,
+                  text: namaToko,
                   style: GoogleFonts.roboto(
                       fontWeight: FontWeight.w500,
                       fontSize: 13,
                       color: Color(0xff27282C)),
                   children: <TextSpan>[
                     TextSpan(
-                        text: barangModel.deskripsi,
+                        text: deskripsi,
                         style: GoogleFonts.roboto(
                             color: Color(0xff27282C),
                             fontWeight: FontWeight.w400,
@@ -198,36 +213,13 @@ class CustomBarangContent extends StatelessWidget {
                   ],
                 ),
               ),
-              // Row(children: [
-              //   Text(barangModel.namaToko,
-              //       style: GoogleFonts.roboto(
-              //         fontSize: 13,
-              //         fontWeight: FontWeight.w500,
-              //         color: Color(0xff27282C),
-              //       )),
-              //   SizedBox(
-              //     width: 3,
-              //   ),
-              //   Flexible(
-              //     fit: FlexFit.tight,
-              //     child: Text(
-              //       barangModel.deskripsi,
-              //       style: GoogleFonts.roboto(
-              //         fontSize: 13,
-              //         fontWeight: FontWeight.w400,
-              //         color: Color(0xff27282C),
-              //       ),
-              //       // textAlign: TextAlign.justify,
-              //     ),
-              //   ),
-              // ]),
             ),
             SizedBox(
               height: 6,
             ),
             Container(
               padding: EdgeInsets.symmetric(horizontal: ScreenWidth * 0.042),
-              child: Text("Lihat semua ${barangModel.komentar} komentar",
+              child: Text("Lihat semua ${komentar} komentar",
                   style: GoogleFonts.roboto(
                       fontSize: 13,
                       fontWeight: FontWeight.w400,
@@ -239,7 +231,7 @@ class CustomBarangContent extends StatelessWidget {
             Container(
               padding: EdgeInsets.symmetric(horizontal: ScreenWidth * 0.042),
               child: Text(
-                "${barangModel.waktu} Jam yang lalu",
+                "${waktu} Jam yang lalu",
                 style: GoogleFonts.roboto(
                     fontSize: 10,
                     fontWeight: FontWeight.w400,

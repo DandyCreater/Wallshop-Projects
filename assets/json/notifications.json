@@ -1,0 +1,58 @@
+{
+    "ResponseStatus": "OK",
+    "OKContentResponse": {
+        "items": [
+            {
+                "imageUrl": "assets/icons/icon_small_store.png",
+                "iconUrl": "assets/icons/icon_disc_notif.png",
+                "title": "",
+                "timeinformation": "2 jam yang lalu",
+                "lastrich": "yuk buruan cek sekarang!",
+                "richsecondtitle": "Pixel Store, ",
+                "richtitle": "",
+                "subrichtitle": "Ada diskon baru nih di "
+            },
+            {
+                "imageUrl": "assets/icons/icon_small_store.png",
+                "iconUrl": "assets/icons/icon_disc_notif.png",
+                "title": "",
+                "timeinformation": "8 jam yang lalu",
+                "lastrich": "yuk buruan cek sekarang!",
+                "richsecondtitle": "Pixel Store, ",
+                "richtitle": "",
+                "subrichtitle": "Ada diskon baru nih di "
+            },
+            {
+                "imageUrl": "assets/icons/icon_small_store.png",
+                "iconUrl": "assets/icons/icon_disc_notif.png",
+                "title": "Pixel Store",
+                "timeinformation": "Kemarin pukul 22.29",
+                "lastrich": "baru, yuk lihat sekarang!",
+                "richsecondtitle": "12 produk ",
+                "richtitle": "",
+                "subrichtitle": "baru saja mengupload "
+            },
+            {
+                "imageUrl": "assets/icons/icon_small_store.png",
+                "iconUrl": "assets/icons/icon_disc_notif.png",
+                "title": "Pixel Store ",
+                "timeinformation": "Kemarin pukul 22.29",
+                "lastrich": "baru, yuk lihat sekarang!",
+                "richsecondtitle": "12 produk ",
+                "richtitle": "",
+                "subrichtitle": "baru saja mengupload "
+            },
+            {
+                "imageUrl": "assets/icons/icon_small_store.png",
+                "iconUrl": "assets/icons/icon_disc_notif.png",
+                "title": "",
+                "timeinformation": "Kemarin pukul 13.10",
+                "lastrich": "",
+                "richsecondtitle": "Pixel Store",
+                "richtitle": "",
+                "subrichtitle": "Kamu baru saja mengikuti "
+            }
+        ]
+    },
+    "failContent": ""
+}

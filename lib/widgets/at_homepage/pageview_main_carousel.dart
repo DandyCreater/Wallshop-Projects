@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:slicing_homepage/models/category_model.dart';
+import 'package:slicing_homepage/domain/models/homepage/promo_homepage/promo_model.dart';
+
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class PageViewMainCarousel extends StatelessWidget {
-  PageViewMainCarousel({Key? key}) : super(key: key);
+  final OKContentPromo source;
+
+  PageViewMainCarousel({Key? key, required this.source}) : super(key: key);
 
   final pageController = PageController(viewportFraction: .9);
 
@@ -27,13 +30,14 @@ class PageViewMainCarousel extends StatelessWidget {
       ),
       child: Stack(
         children: [
-          Container(
+          SizedBox(
             height: double.infinity,
             width: double.infinity,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(15),
               child: Image.asset(
-                category.imageUrl.toString(),
+                category.toString(),
+                // category.imageUrl.toString(),
                 fit: BoxFit.cover,
               ),
             ),
@@ -48,16 +52,16 @@ class PageViewMainCarousel extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Container(
+        SizedBox(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height * 0.23,
           child: PageView.builder(
             controller: pageController,
-            physics: BouncingScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
             scrollDirection: Axis.horizontal,
-            itemCount: categories.length,
+            itemCount: source.items!.length,
             itemBuilder: (context, index) {
-              final category = categories[index];
+              final category = source.items![index].imageUrl.toString();
               return _buildCategories(context, category);
             },
           ),
@@ -69,7 +73,7 @@ class PageViewMainCarousel extends StatelessWidget {
           ),
           child: SmoothPageIndicator(
             controller: pageController,
-            count: categories.length,
+            count: source.items!.length,
             effect: SlideEffect(
               dotWidth: 10.0,
               dotHeight: 10.0,

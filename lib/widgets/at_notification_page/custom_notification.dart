@@ -2,11 +2,27 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:slicing_homepage/models/notifications/notification_model.dart';
+import 'package:slicing_homepage/domain/models/notifications/notification_model.dart';
 
 class CustomNotification extends StatelessWidget {
-  NotificationModel notificationModel;
-  CustomNotification({Key? key, required this.notificationModel})
+  final String imageUrl;
+  final String iconUrl;
+  final String title;
+  final String timeinformation;
+  final String lastrich;
+  final String richsecondtitle;
+  final String richtitle;
+  final String subrichtitle;
+  const CustomNotification(
+      {Key? key,
+      required this.imageUrl,
+      required this.iconUrl,
+      required this.title,
+      required this.timeinformation,
+      required this.lastrich,
+      required this.richsecondtitle,
+      required this.richtitle,
+      required this.subrichtitle})
       : super(key: key);
 
   @override
@@ -27,9 +43,8 @@ class CustomNotification extends StatelessWidget {
                 width: 68,
                 decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Color(0xffFFBA1E),
-                    image: DecorationImage(
-                        image: AssetImage(notificationModel.imageUrl))),
+                    color: const Color(0xffFFBA1E),
+                    image: DecorationImage(image: AssetImage(imageUrl))),
                 child: Align(
                   alignment: Alignment.bottomRight,
                   child: Container(
@@ -37,12 +52,11 @@ class CustomNotification extends StatelessWidget {
                     width: 30,
                     decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        image: DecorationImage(
-                            image: AssetImage(notificationModel.iconUrl))),
+                        image: DecorationImage(image: AssetImage(iconUrl))),
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
               Flexible(
@@ -53,41 +67,41 @@ class CustomNotification extends StatelessWidget {
                   children: [
                     RichText(
                       text: TextSpan(
-                        text: notificationModel.title,
+                        text: title,
                         style: GoogleFonts.roboto(
                             fontWeight: FontWeight.bold,
                             fontSize: 13,
                             color: Colors.black),
                         children: <TextSpan>[
                           TextSpan(
-                              text: notificationModel.subrichtitle,
+                              text: subrichtitle,
                               style: GoogleFonts.roboto(
                                   fontWeight: FontWeight.w400, fontSize: 13)),
                           TextSpan(
-                              text: notificationModel.richsecondtitle,
+                              text: richsecondtitle,
                               style: GoogleFonts.roboto(
                                   fontWeight: FontWeight.bold, fontSize: 13)),
                           TextSpan(
-                              text: notificationModel.lastrich,
+                              text: lastrich,
                               style: GoogleFonts.roboto(
                                   fontWeight: FontWeight.w400, fontSize: 13)),
                         ],
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 4,
                     ),
                     Text(
-                      notificationModel.timeinformation,
+                      timeinformation,
                       style: GoogleFonts.roboto(
-                          color: Color(0xff63767E),
+                          color: const Color(0xff63767E),
                           fontSize: 12,
                           fontWeight: FontWeight.w400),
                     ),
                   ],
                 ),
               ),
-              Flexible(
+              const Flexible(
                 flex: 1,
                 fit: FlexFit.tight,
                 child: Icon(

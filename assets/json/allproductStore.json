@@ -1,0 +1,47 @@
+{
+    "ResponseCode": "OK",
+    "OKContentAllProduct": {
+        "items": [
+            {
+                "imageUrl": "assets/images/tshirt.png",
+                "name": "Kaos Tshirt \nChicago Bulls",
+                "storeName": "Gramedia Sam Ratulangi",
+                "price": "79000",
+                "rating": "4.8",
+                "views": "378",
+                "press": "(){}",
+                "sold": "473"
+            },
+            {
+                "imageUrl": "assets/images/shoes.png",
+                "name": "Sepatu Basket\nNike Air Versitile II",
+                "storeName": "Gramedia Sam Ratulangi",
+                "price": "8000000",
+                "rating": "4.8",
+                "views": "378",
+                "press": "(){}",
+                "sold": "473"
+            },
+            {
+                "imageUrl": "assets/images/asusrog.png",
+                "name": "Laptop Asus ROG\nCore i7 8750H",
+                "storeName": "Gramedia Sam Ratulangi",
+                "price": "14000000",
+                "rating": "4.8",
+                "views": "378",
+                "press": "(){}",
+                "sold": "473"
+            },
+            {
+                "imageUrl": "assets/images/supreme.png",
+                "name": "Supreme\nCash Gun",
+                "storeName": "Gramedia Sam Ratulangi",
+                "price": "1150000",
+                "rating": "4.8",
+                "views": "378",
+                "press": "(){}",
+                "sold": "473"
+            }
+        ]
+    }
+}

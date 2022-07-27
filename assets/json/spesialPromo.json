@@ -1,0 +1,72 @@
+{
+    "responseStatus": "OK",
+    "OKContent": {
+        "item": [
+            {
+                "imageUrl": "assets/images/motor.png",
+                "name": "All New CBR 250R ABS Red Limited Edition",
+                "price": "57900000",
+                "discPrice": "63000000",
+                "discon": "8",
+                "city": "Kota Manado"
+            },
+            {
+                "imageUrl": "assets/images/shark.png",
+                "name": "Hiu Dwarf Blacktip Size 20cm",
+                "price": "750000",
+                "discPrice": "1000000",
+                "discon": "35",
+                "city": "Kota Manado"
+            },
+            {
+                "imageUrl": "assets/images/spider.png",
+                "name": "Mexican redleg tarantula female",
+                "price": "799000",
+                "discPrice": "1100000",
+                "discon": "29",
+                "city": "Kota Manado"
+            },
+            {
+                "imageUrl": "assets/images/red_robot_product.png",
+                "name": "Supreme Cash Gun",
+                "price": "15499000",
+                "discPrice": "20000000",
+                "discon": "29",
+                "city": "Kota Manado"
+            },
+            {
+                "imageUrl": "assets/images/black_car_robot_product.png",
+                "name": "Original Vector Robot Tipe Vector By Anki",
+                "price": "5499000",
+                "discPrice": "7100000",
+                "discon": "29",
+                "city": "Kota Manado"
+            },
+            {
+                "imageUrl": "assets/images/dog_robot_product.png",
+                "name": "Sony Aibo The intelligent Pet Robot",
+                "price": "98000000",
+                "discPrice": "10320000",
+                "discon": "29",
+                "city": "Kota Manado"
+            },
+            {
+                "imageUrl": "assets/images/red_robot_product.png",
+                "name": "Humanoid Robotic with AI by Vijay V Shah O",
+                "price": "15499000",
+                "discPrice": "20000000",
+                "discon": "29",
+                "city": "Kota Manado"
+            },
+            {
+                "imageUrl": "assets/images/black_car_robot_product.png",
+                "name": "Original Vector Robot Tipe Vector By Anki",
+                "price": "5499000",
+                "discPrice": "7100000",
+                "discon": "29",
+                "city": "Kota Manado"
+            }
+        ]
+    },
+    "failContent": ""
+}

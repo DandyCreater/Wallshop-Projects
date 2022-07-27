@@ -1,0 +1,68 @@
+{
+    "ResponseCode": "OK",
+    "OKContentMengikuti": {
+        "item": [
+            {
+                "namaToko": "Inception Mart",
+                "kondisiProduk": "Produk Baru",
+                "imageUrlToko": "assets/icons/icon_shop.png",
+                "imageUrl": "assets/images/robot_mobil.png",
+                "komentar": "7",
+                "likes": "259",
+                "waktu": "2",
+                "deskripsi": "Lorem ipsum dolor sit amet, consectetur"
+            },
+            {
+                "namaToko": "Inception Mart",
+                "kondisiProduk": "Produk Baru",
+                "imageUrlToko": "assets/icons/icon_shop.png",
+                "imageUrl": "assets/images/robot_merah.png",
+                "komentar": "7",
+                "likes": "259",
+                "waktu": "2",
+                "deskripsi": "Lorem ipsum dolor sit amet, consectetur"
+            },
+            {
+                "namaToko": "Inception Mart",
+                "kondisiProduk": "Produk Baru",
+                "imageUrlToko": "assets/icons/icon_shop.png",
+                "imageUrl": "assets/images/robot_biru.png",
+                "komentar": "7",
+                "likes": "259",
+                "waktu": "2",
+                "deskripsi": "Lorem ipsum dolor sit amet, consectetur"
+            },
+            {
+                "namaToko": "Inception Mart",
+                "kondisiProduk": "Produk Baru",
+                "imageUrlToko": "assets/icons/icon_shop.png",
+                "imageUrl": "assets/images/shark.png",
+                "komentar": "7",
+                "likes": "259",
+                "waktu": "2",
+                "deskripsi": "Lorem ipsum dolor sit amet, consectetur"
+            },
+            {
+                "namaToko": "Inception Mart",
+                "kondisiProduk": "Produk Baru",
+                "imageUrlToko": "assets/icons/icon_shop.png",
+                "imageUrl": "assets/images/bunglon.png",
+                "komentar": "7",
+                "likes": "259",
+                "waktu": "2",
+                "deskripsi": "Lorem ipsum dolor sit amet, consectetur"
+            },
+            {
+                "namaToko": "Inception Mart",
+                "kondisiProduk": "Produk Baru",
+                "imageUrlToko": "assets/icons/icon_shop.png",
+                "imageUrl": "assets/images/fish.png",
+                "komentar": "7",
+                "likes": "259",
+                "waktu": "2",
+                "deskripsi": "Lorem ipsum dolor sit amet, consectetur"
+            }
+        ]
+    },
+    "failContent": ""
+}

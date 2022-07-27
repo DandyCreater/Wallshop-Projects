@@ -1,0 +1,23 @@
+{
+    "ResponseCode": "OK",
+    "OKContentPromo": {
+        "items": [
+            {
+                "name": "Technology",
+                "imageUrl": "assets/images/slider1_1.png"
+            },
+            {
+                "name": "Business",
+                "imageUrl": "assets/images/slider1_2.png"
+            },
+            {
+                "name": "Technology",
+                "imageUrl": "assets/images/slider1_1.png"
+            },
+            {
+                "name": "Business",
+                "imageUrl": "assets/images/slider1_2.png"
+            }
+        ]
+    }
+}

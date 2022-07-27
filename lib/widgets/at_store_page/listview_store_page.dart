@@ -1,11 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
-import 'package:slicing_homepage/models/product_store_model.dart';
 
 class ListViewStorePage extends StatelessWidget {
-  ProductStore productStore;
-  ListViewStorePage({Key? key, required this.productStore}) : super(key: key);
+  final String imageUrl;
+  final String name;
+  final String price;
+  final String discon;
+  final String discPrice;
+
+  const ListViewStorePage(
+      {Key? key,
+      required this.imageUrl,
+      required this.name,
+      required this.price,
+      required this.discon,
+      required this.discPrice})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,16 +28,16 @@ class ListViewStorePage extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             color: Colors.white,
-            image: DecorationImage(
-                image: AssetImage(productStore.imageUrl), fit: BoxFit.cover),
+            image:
+                DecorationImage(image: AssetImage(imageUrl), fit: BoxFit.cover),
           ),
         ),
         Container(
-          padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
-          margin: EdgeInsets.only(top: 90),
+          padding: const EdgeInsets.fromLTRB(10, 10, 0, 0),
+          margin: const EdgeInsets.only(top: 90),
           width: 104,
           height: 76,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
               boxShadow: [
                 BoxShadow(
                   blurRadius: 20,
@@ -42,25 +53,25 @@ class ListViewStorePage extends StatelessWidget {
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Text(
-              productStore.name,
+              name,
               style: GoogleFonts.roboto(
-                  color: Color(0xff3F3F3F),
+                  color: const Color(0xff3F3F3F),
                   fontSize: 10,
                   fontWeight: FontWeight.w400),
             ),
-            SizedBox(
+            const SizedBox(
               height: 8,
             ),
             Text(
               NumberFormat.currency(
                       decimalDigits: 0, symbol: "Rp. ", locale: 'id')
-                  .format(productStore.price),
+                  .format(double.tryParse(price)),
               style: GoogleFonts.roboto(
-                  color: Color(0xff3F3F3F),
+                  color: const Color(0xff3F3F3F),
                   fontSize: 12,
                   fontWeight: FontWeight.w700),
             ),
-            SizedBox(
+            const SizedBox(
               height: 6,
             ),
             Row(
@@ -70,10 +81,10 @@ class ListViewStorePage extends StatelessWidget {
                   width: 23,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Color(0xffBC1533)),
+                      color: const Color(0xffBC1533)),
                   child: Center(
                     child: Text(
-                      "${productStore.discon}%",
+                      "${discon}%",
                       style: GoogleFonts.roboto(
                           color: Colors.white,
                           fontSize: 10,
@@ -81,15 +92,15 @@ class ListViewStorePage extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 8,
                 ),
                 Text(
                   NumberFormat.currency(
                           decimalDigits: 0, symbol: "Rp. ", locale: 'id')
-                      .format(productStore.discPrice),
+                      .format(double.tryParse(discPrice)),
                   style: GoogleFonts.roboto(
-                      color: Color(0xff4D4D4D),
+                      color: const Color(0xff4D4D4D),
                       fontSize: 10,
                       fontWeight: FontWeight.w400),
                 ),

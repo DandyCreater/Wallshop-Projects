@@ -1,0 +1,33 @@
+{
+    "responseStatus": "OK",
+    "OKContentPopuler": {
+        "item": [
+            {
+                "imageUrl": "assets/images/manado.png",
+                "title": "Manado Exotic Island",
+                "subtitle": "Pets"
+            },
+            {
+                "imageUrl": "assets/images/miens.png",
+                "title": "Miends Souvenir",
+                "subtitle": "Souvenir"
+            },
+            {
+                "imageUrl": "assets/images/maskut.png",
+                "title": "Maskut Sport",
+                "subtitle": "Peralatan Olahraga"
+            },
+            {
+                "imageUrl": "assets/images/manado.png",
+                "title": "Manado Exotic Island",
+                "subtitle": "Pets"
+            },
+            {
+                "imageUrl": "assets/images/manado.png",
+                "title": "Manado Exotic Island",
+                "subtitle": "Pets"
+            }
+        ]
+    },
+    "failContent": ""
+}

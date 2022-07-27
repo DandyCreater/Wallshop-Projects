@@ -1,0 +1,133 @@
+{
+    "ResponseCode": "OK",
+    "OKContentToko": {
+        "storeData": [
+            {
+                "storeName": "Pixel Mart",
+                "kiloMeter": "200",
+                "product": [
+                    {
+                        "name": "Tshirt Chicago Bulls",
+                        "description": "The best NBA team ever",
+                        "price": "12000",
+                        "imageUrl": "assets/images/tshirt.png"
+                    },
+                    {
+                        "name": "Nike Footsal Shoe",
+                        "description": "Very light and comfortable",
+                        "price": "2399000",
+                        "imageUrl": "assets/images/shoes.png"
+                    },
+                    {
+                        "name": "Supreme Cash Gun",
+                        "description": "The best gun for cash",
+                        "price": "1122000",
+                        "imageUrl": "assets/images/supreme.png"
+                    }
+                ],
+                "jarak": "m"
+            },
+            {
+                "storeName": "Inception Mart",
+                "kiloMeter": "3",
+                "product": [
+                    {
+                        "name": "",
+                        "description": "",
+                        "price": "5999000",
+                        "imageUrl": "assets/images/white_car_robot_product.png"
+                    },
+                    {
+                        "name": "",
+                        "description": "",
+                        "price": "12999000",
+                        "imageUrl": "assets/images/red_robot_product.png"
+                    },
+                    {
+                        "name": "",
+                        "description": "",
+                        "price": "5499000",
+                        "imageUrl": "assets/images/black_car_robot_product.png"
+                    }
+                ],
+                "jarak": "Km"
+            },
+            {
+                "storeName": "Exotic Pet Store",
+                "kiloMeter": "4",
+                "product": [
+                    {
+                        "name": "",
+                        "description": "",
+                        "price": "199000",
+                        "imageUrl": "assets/images/exotic1.png"
+                    },
+                    {
+                        "name": "",
+                        "description": "",
+                        "price": "279000",
+                        "imageUrl": "assets/images/hand_spider.png"
+                    },
+                    {
+                        "name": "",
+                        "description": "",
+                        "price": "379000",
+                        "imageUrl": "assets/images/exotic3.png"
+                    }
+                ],
+                "jarak": "Km"
+            },
+            {
+                "storeName": "Samsan Bookstore",
+                "kiloMeter": "5",
+                "product": [
+                    {
+                        "name": "",
+                        "description": "",
+                        "price": "67000",
+                        "imageUrl": "assets/images/elon.png"
+                    },
+                    {
+                        "name": "",
+                        "description": "",
+                        "price": "47000",
+                        "imageUrl": "assets/images/jackma.png"
+                    },
+                    {
+                        "name": "",
+                        "description": "",
+                        "price": "57000",
+                        "imageUrl": "assets/images/public_speaking.png"
+                    }
+                ],
+                "jarak": "Km"
+            },
+            {
+                "storeName": "Manado Fish Store",
+                "kiloMeter": "9",
+                "product": [
+                    {
+                        "name": "",
+                        "description": "",
+                        "price": "167000",
+                        "imageUrl": "assets/images/orange_fish.png"
+                    },
+                    {
+                        "name": "",
+                        "description": "",
+                        "price": "147000",
+                        "imageUrl": "assets/images/yellow_fish.png"
+                    },
+                    {
+                        "name": "",
+                        "description": "",
+                        "price": "157000",
+                        "imageUrl": "assets/images/purple_fish.png"
+                    }
+                ],
+                "jarak": "Km"
+            }
+        ]
+    },
+    "failContent": ""
+}

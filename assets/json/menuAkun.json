@@ -1,0 +1,40 @@
+{
+    "ResponseStatus": "OK",
+    "OKContentMenu": {
+        "items": [
+            {
+                "imageUrl": "assets/icons/icon_notification.png",
+                "title": "Notifications"
+            },
+            {
+                "imageUrl": "assets/icons/icon_payment.png",
+                "title": "Payment Method"
+            },
+            {
+                "imageUrl": "assets/icons/icon_reward.png",
+                "title": "Reward credits"
+            },
+            {
+                "imageUrl": "assets/icons/icon_invite.png",
+                "title": "Invite Friends"
+            },
+            {
+                "imageUrl": "assets/icons/icon_track.png",
+                "title": "Track Order"
+            },
+            {
+                "imageUrl": "assets/icons/icon_order.png",
+                "title": "Order History"
+            },
+            {
+                "imageUrl": "assets/icons/icon_about.png",
+                "title": "About Us"
+            },
+            {
+                "imageUrl": "assets/icons/icon_signout.png",
+                "title": "Sign Out"
+            }
+        ]
+    },
+    "failContent": ""
+}

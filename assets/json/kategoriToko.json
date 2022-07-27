@@ -1,0 +1,48 @@
+{
+    "ResponseCode": "OK",
+    "OKContentKategoriToko": {
+        "listItem": [
+            {
+                "imageUrl": "assets/icons/category_icon.png",
+                "title": "Semua Kategori"
+            },
+            {
+                "imageUrl": "assets/icons/category_icon.png",
+                "title": "Fashion"
+            },
+            {
+                "imageUrl": "assets/icons/category_icon.png",
+                "title": "Gadget"
+            },
+            {
+                "imageUrl": "assets/icons/category_icon.png",
+                "title": "Komputer"
+            },
+            {
+                "imageUrl": "assets/icons/category_icon.png",
+                "title": "Hewan Peliharaan"
+            },
+            {
+                "imageUrl": "assets/icons/category_icon.png",
+                "title": "Souvenir"
+            },
+            {
+                "imageUrl": "assets/icons/category_icon.png",
+                "title": "Otomotif"
+            },
+            {
+                "imageUrl": "assets/icons/category_icon.png",
+                "title": "Motor"
+            },
+            {
+                "imageUrl": "assets/icons/category_icon.png",
+                "title": "Furnitur"
+            },
+            {
+                "imageUrl": "assets/icons/category_icon.png",
+                "title": "Buku"
+            }
+        ]
+    },
+    "failContent": ""
+}

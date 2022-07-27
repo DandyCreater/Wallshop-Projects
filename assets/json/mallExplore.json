@@ -1,0 +1,44 @@
+{
+    "ResponseCode": "OK",
+    "OKContentMall": {
+        "items": [
+            {
+                "imageUrl": "assets/images/megamall.png",
+                "name": "Megamall",
+                "address": "Shopping Mall. Jl Pierre Tendean Wenang selatan, kota Manado.",
+                "information": "Open"
+            },
+            {
+                "imageUrl": "assets/images/manadotown.png",
+                "name": "Manado Town Square",
+                "address": "Shopping Mall. Jl Pierre Tendean Wenang selatan, kota Manado.",
+                "information": "Open"
+            },
+            {
+                "imageUrl": "assets/images/itcenter.png",
+                "name": "IT Center",
+                "address": "Shopping Mall. Jl Pierre Tendean Wenang selatan, kota Manado.",
+                "information": "Open"
+            },
+            {
+                "imageUrl": "assets/images/megatrade.png",
+                "name": "Mega Trade Center",
+                "address": "Shopping Mall. Jl Pierre Tendean Wenang selatan, kota Manado.",
+                "information": "Open"
+            },
+            {
+                "imageUrl": "assets/images/lippoplaza.png",
+                "name": "Lippo Plaza Manado",
+                "address": "Shopping Mall. Jl Pierre Tendean Wenang selatan, kota Manado.",
+                "information": "Open"
+            },
+            {
+                "imageUrl": "assets/images/transmart.png",
+                "name": "Transmart Kairagi",
+                "address": "Shopping Mall. Jl Pierre Tendean Wenang selatan, kota Manado.",
+                "information": "Open"
+            }
+        ]
+    },
+    "failContent": ""
+}

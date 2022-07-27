@@ -3,13 +3,27 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
-import 'package:slicing_homepage/models/homepage/homepage_model.dart';
-import 'package:slicing_homepage/models/product_store_model.dart';
 
 class ListViewSemuaProduk extends StatelessWidget {
-  SemuaProductModel semuaProductModel;
+  final String imageUrl;
+  final String name;
+  final String price;
+  final String storeName;
+  final String rating;
+  final String views;
+  final String sold;
+  final Function() press;
 
-  ListViewSemuaProduk({Key? key, required this.semuaProductModel})
+  ListViewSemuaProduk(
+      {Key? key,
+      required this.imageUrl,
+      required this.name,
+      required this.price,
+      required this.storeName,
+      required this.rating,
+      required this.views,
+      required this.sold,
+      required this.press})
       : super(key: key);
 
   @override
@@ -22,17 +36,16 @@ class ListViewSemuaProduk extends StatelessWidget {
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               image: DecorationImage(
-                  image: AssetImage(semuaProductModel.imageUrl),
-                  fit: BoxFit.cover)),
+                  image: AssetImage(imageUrl), fit: BoxFit.cover)),
         ),
         Container(
-          padding: EdgeInsets.symmetric(vertical: 10, horizontal: 12),
+          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 12),
           margin: EdgeInsets.only(
             top: MediaQuery.of(context).size.height * 0.17,
           ),
           height: MediaQuery.of(context).size.height * 0.2,
           width: MediaQuery.of(context).size.width * 0.417,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
               boxShadow: [
                 BoxShadow(
                   blurRadius: 20,
@@ -49,88 +62,87 @@ class ListViewSemuaProduk extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                semuaProductModel.name,
+                name,
                 style: GoogleFonts.roboto(
                     fontSize: 14,
-                    color: Color(0xff000000),
+                    color: const Color(0xff000000),
                     fontWeight: FontWeight.w300),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Text(
                 NumberFormat.currency(
                         locale: 'id', symbol: "Rp. ", decimalDigits: 0)
-                    .format(semuaProductModel.price),
+                    .format(double.tryParse(price)),
                 style: GoogleFonts.roboto(
                     fontSize: 14,
-                    color: Color(0xff000000),
+                    color: const Color(0xff000000),
                     fontWeight: FontWeight.w400),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 4,
               ),
               Text(
-                semuaProductModel.storeName,
+                storeName,
                 style: GoogleFonts.roboto(
                     fontSize: 8,
-                    color: Color(0xff63767E),
+                    color: const Color(0xff63767E),
                     fontWeight: FontWeight.w400),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 3,
               ),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
-                // mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Icon(
+                  const Icon(
                     Icons.star,
                     size: 12,
                     color: Color(0xffFDC74F),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 5,
                   ),
                   Text(
-                    semuaProductModel.rating.toString(),
+                    rating,
                     style: GoogleFonts.roboto(
                         fontSize: 8,
-                        color: Color(0xff000000),
+                        color: const Color.fromARGB(255, 173, 158, 158),
                         fontWeight: FontWeight.w400),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 7,
                   ),
                   Text(
-                    "(${semuaProductModel.views})",
+                    "(${views})",
                     style: GoogleFonts.roboto(
                         fontSize: 8,
-                        color: Color(0xff63767E),
+                        color: const Color(0xff63767E),
                         fontWeight: FontWeight.w400),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 7,
                   ),
                   Container(
                     height: 8,
                     width: 0.9,
                     decoration: BoxDecoration(
-                        border: Border.all(color: Color(0xff63767E))),
+                        border: Border.all(color: const Color(0xff63767E))),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 7,
                   ),
                   Text(
-                    "Terjual ${semuaProductModel.sold}",
+                    "Terjual ${sold}",
                     style: GoogleFonts.roboto(
                         fontSize: 8,
-                        color: Color(0xff63767E),
+                        color: const Color(0xff63767E),
                         fontWeight: FontWeight.w400),
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 6,
               ),
               SizedBox(
@@ -141,14 +153,14 @@ class ListViewSemuaProduk extends StatelessWidget {
                       shape: MaterialStateProperty.all(RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(5))),
                       backgroundColor: MaterialStateProperty.all(Colors.black)),
-                  onPressed: semuaProductModel.press,
-                  child: Container(
+                  onPressed: press,
+                  child: SizedBox(
                     child: Text(
                       "Beli",
                       style: GoogleFonts.roboto(
                           fontSize: 12,
                           fontWeight: FontWeight.w400,
-                          color: Color(0xffFFFFFF)),
+                          color: const Color(0xffFFFFFF)),
                     ),
                   ),
                 ),

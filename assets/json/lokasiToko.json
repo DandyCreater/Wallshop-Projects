@@ -1,0 +1,48 @@
+{
+    "ResponseCode": "OK",
+    "OKContentLokasiToko": {
+        "listItem": [
+            {
+                "imageUrl": "assets/icons/location_icon.png",
+                "title": "Radius 25Km"
+            },
+            {
+                "imageUrl": "assets/icons/location_icon.png",
+                "title": "Sulawesi Utara"
+            },
+            {
+                "imageUrl": "assets/icons/location_icon.png",
+                "title": "Manado"
+            },
+            {
+                "imageUrl": "assets/icons/location_icon.png",
+                "title": "Tomohon"
+            },
+            {
+                "imageUrl": "assets/icons/location_icon.png",
+                "title": "Kotamobagu"
+            },
+            {
+                "imageUrl": "assets/icons/location_icon.png",
+                "title": "Minahasa Utara"
+            },
+            {
+                "imageUrl": "assets/icons/location_icon.png",
+                "title": "Minahasa Tenggara"
+            },
+            {
+                "imageUrl": "assets/icons/location_icon.png",
+                "title": "Minahasa Selatan"
+            },
+            {
+                "imageUrl": "assets/icons/location_icon.png",
+                "title": "Minahasa"
+            },
+            {
+                "imageUrl": "assets/icons/location_icon.png",
+                "title": "Kepulauan Talaud"
+            }
+        ]
+    },
+    "failContent": ""
+}

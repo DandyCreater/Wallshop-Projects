@@ -1,0 +1,68 @@
+{
+    "responseCode": "OK",
+    "OKContentRank": {
+        "item": [
+            {
+                "num": "1",
+                "imageUrl": "assets/icons/icon_small_store.png",
+                "title": "Pixel Store",
+                "price": "0"
+            },
+            {
+                "num": "2",
+                "imageUrl": "assets/icons/icon_small_store.png",
+                "title": "Bubble Mart",
+                "price": "0"
+            },
+            {
+                "num": "3",
+                "imageUrl": "assets/icons/icon_small_store.png",
+                "title": "Cherry Mart",
+                "price": "0"
+            },
+            {
+                "num": "4",
+                "imageUrl": "assets/icons/icon_small_store.png",
+                "title": "Omega Store",
+                "price": "0"
+            },
+            {
+                "num": "5",
+                "imageUrl": "assets/icons/icon_small_store.png",
+                "title": "Kawanua Merchandise",
+                "price": "0"
+            },
+            {
+                "num": "6",
+                "imageUrl": "assets/icons/icon_small_store.png",
+                "title": "Moon Pet Store",
+                "price": "0"
+            },
+            {
+                "num": "7",
+                "imageUrl": "assets/icons/icon_small_store.png",
+                "title": "Luna Store",
+                "price": "0"
+            },
+            {
+                "num": "8",
+                "imageUrl": "assets/icons/icon_small_store.png",
+                "title": "BomBom Merchandise",
+                "price": "0"
+            },
+            {
+                "num": "9",
+                "imageUrl": "assets/icons/icon_small_store.png",
+                "title": "Animal Kingdom",
+                "price": "0"
+            },
+            {
+                "num": "10",
+                "imageUrl": "assets/icons/icon_small_store.png",
+                "title": "Hugo Mart",
+                "price": "0"
+            }
+        ]
+    },
+    "failContent": ""
+}

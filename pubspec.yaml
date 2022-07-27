@@ -33,16 +33,31 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
   badges: ^2.0.2
-  smooth_page_indicator: ^1.0.0+2
+  cupertino_icons: ^1.0.2
+  dartz: ^0.10.1
+  data_connection_checker: ^0.3.4
+  date_time_picker: ^2.1.0
+  dio: ^4.0.6
+  equatable: ^2.0.3
+  flutter_bloc: ^8.0.1
+  flutter_launcher_icons: ^0.9.2
+  flutter_svg: ^1.1.0
   google_fonts: 3.0.1
   intl: ^0.17.0
   md2_tab_indicator: ^1.0.2
   modal_bottom_sheet: ^2.0.1
-  flutter_launcher_icons: ^0.9.2
-  date_time_picker: ^2.1.0
-  flutter_svg: ^1.1.0
+  smooth_page_indicator: ^1.0.0+2
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
   
 
 
@@ -77,6 +92,7 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
+    - assets/json/
 
   #   - images/a_dot_ham.jpeg
 
