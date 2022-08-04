@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_statusbarcolor_ns/flutter_statusbarcolor_ns.dart';
 import 'package:slicing_homepage/data/bloc/akun_bloc/menu/menu_bloc.dart';
 import 'package:slicing_homepage/data/bloc/explore_bloc/barang_bloc/barang_bloc.dart';
 import 'package:slicing_homepage/data/bloc/explore_bloc/kategoritoko_bloc/kategoritoko_bloc.dart';
@@ -38,6 +40,8 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
+    // FlutterStatusbarcolor.setStatusBarColor(Colors.white);
+
     return MultiBlocProvider(
       providers: [
         BlocProvider(
@@ -69,10 +73,18 @@ class _MyAppState extends State<MyApp> {
         BlocProvider(
             create: ((_) => NotificationsBloc()..add(FetchNotifications()))),
       ],
-      child: const MaterialApp(
-        debugShowCheckedModeBanner: false,
-        onGenerateRoute: RouteGenerator.getRoute,
-        initialRoute: Routes.splashRoute,
+      // ignore: prefer_const_constructors
+      child: AnnotatedRegion<SystemUiOverlayStyle>(
+        value: SystemUiOverlayStyle(
+          statusBarColor: Colors.white,
+          statusBarBrightness: Brightness.dark,
+          statusBarIconBrightness: Brightness.dark,
+        ),
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          onGenerateRoute: RouteGenerator.getRoute,
+          initialRoute: Routes.splashRoute,
+        ),
       ),
     );
   }

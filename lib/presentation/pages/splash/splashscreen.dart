@@ -16,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
     // TODO: implement initState
     super.initState();
     Future.delayed(const Duration(seconds: 1)).then((value) {
-      Navigator.pushNamed(context, '/master');
+      Navigator.pushNamed(context, '/login');
     });
   }
 
@@ -24,37 +24,18 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Stack(
-        alignment: Alignment.center,
-        children: [
-          Positioned(
-            bottom: MediaQuery.of(context).size.height * 0.36,
-            child: Container(
-              height: MediaQuery.of(context).size.height * 0.4,
-              width: MediaQuery.of(context).size.width * 0.9,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage(
-                      "assets/images/splashscreen.png",
-                    ),
-                    fit: BoxFit.cover),
+      body: Center(
+        child: Container(
+          height: double.infinity,
+          width: double.infinity,
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(
+                "assets/images/splashscreen.png",
               ),
             ),
           ),
-          Positioned(
-            bottom: MediaQuery.of(context).size.height * 0.33,
-            child: Center(
-              child: Text(
-                "wallshop",
-                style: GoogleFonts.poppins(
-                    fontSize: 50,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.black),
-                textAlign: TextAlign.center,
-              ),
-            ),
-          )
-        ],
+        ),
       ),
     );
   }
