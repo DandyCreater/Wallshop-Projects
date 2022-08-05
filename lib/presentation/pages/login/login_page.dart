@@ -162,8 +162,8 @@ class _LoginPageState extends State<LoginPage> {
               ),
               Center(
                 child: Container(
-                  height: screenHeight * 0.22,
-                  width: screenWidth * 0.6,
+                  height: 150,
+                  width: 200,
                   decoration: const BoxDecoration(
                       image: DecorationImage(
                           image: AssetImage("assets/images/loginlogo.png"),

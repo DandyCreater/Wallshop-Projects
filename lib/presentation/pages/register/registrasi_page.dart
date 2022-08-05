@@ -136,13 +136,15 @@ class _RegisterPageState extends State<RegisterPage> {
             children: [
               Center(
                 child: Container(
-                  margin: EdgeInsets.only(top: screenHeight * 0.02),
-                  height: screenHeight * 0.25,
-                  width: screenWidth * 0.5,
-                  decoration: const BoxDecoration(
+                  margin: EdgeInsets.only(top: screenHeight * 0.04),
+                  height: screenHeight * 0.28,
+                  width: screenWidth * 0.6,
+                  decoration: BoxDecoration(
                       image: DecorationImage(
-                          image: AssetImage("assets/images/register_logo.png"),
-                          fit: BoxFit.cover)),
+                    image: AssetImage("assets/images/register_logo.png"),
+                    scale: 1,
+                    // fit: BoxFit.cover
+                  )),
                 ),
               ),
               Container(
@@ -154,19 +156,24 @@ class _RegisterPageState extends State<RegisterPage> {
                   color: Colors.white,
                   border: Border.all(color: const Color(0xffE8ECF4), width: 2),
                 ),
-                child: Container(
-                  padding: const EdgeInsets.only(left: 6),
-                  child: const Center(
-                    child: Icon(
-                      Icons.arrow_back_ios,
-                      color: Color(0xffE16330),
-                      size: 16,
+                child: InkWell(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.only(left: 6),
+                    child: const Center(
+                      child: Icon(
+                        Icons.arrow_back_ios,
+                        color: Color(0xffE16330),
+                        size: 16,
+                      ),
                     ),
                   ),
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(top: screenHeight * 0.25),
+                margin: EdgeInsets.only(top: screenHeight * 0.28),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
