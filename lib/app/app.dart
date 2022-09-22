@@ -20,18 +20,17 @@ import 'package:slicing_homepage/data/bloc/homepage_bloc/promo/promo_bloc.dart';
 import 'package:slicing_homepage/data/bloc/homepage_bloc/promoSpesial/promo_spesial_bloc.dart';
 import 'package:slicing_homepage/data/bloc/homepage_bloc/rekomendasiItem/rekomendasi_item_bloc.dart';
 import 'package:slicing_homepage/data/bloc/homepage_bloc/tokopopuler/popular_store_bloc.dart';
+import 'package:slicing_homepage/data/bloc/login_bloc/login_bloc.dart';
 import 'package:slicing_homepage/data/bloc/mengikuti_bloc/mengikuti_bloc.dart';
 import 'package:slicing_homepage/data/bloc/notifications_bloc/notifications_bloc.dart';
 import 'package:slicing_homepage/data/bloc/rank_homepage_bloc/rankPembeli/rankpembeli_bloc.dart';
 import 'package:slicing_homepage/data/bloc/rank_homepage_bloc/rankToko/ranktoko_bloc.dart';
+import 'package:slicing_homepage/data/bloc/register_bloc/register_bloc.dart';
+import 'package:slicing_homepage/data/utils/injection_container.dart';
 import 'package:slicing_homepage/presentation/resources/routes_manager.dart';
 
 class MyApp extends StatefulWidget {
-  MyApp._instance();
-  int appState = 0;
-  static final MyApp instance = MyApp._instance();
-
-  factory MyApp() => instance;
+  const MyApp({super.key});
 
   @override
   State<MyApp> createState() => _MyAppState();
@@ -41,7 +40,8 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     // FlutterStatusbarcolor.setStatusBarColor(Colors.white);
-
+    final registerBloc = sl<RegisterBloc>();
+    final loginBloc = sl<LoginBloc>();
     return MultiBlocProvider(
       providers: [
         BlocProvider(
@@ -72,15 +72,19 @@ class _MyAppState extends State<MyApp> {
         BlocProvider(create: ((_) => MenuBloc()..add(FetchMenu()))),
         BlocProvider(
             create: ((_) => NotificationsBloc()..add(FetchNotifications()))),
+
+        //Auth Bloc
+        BlocProvider(create: ((_) => registerBloc)),
+        BlocProvider(create: ((_) => loginBloc))
       ],
       // ignore: prefer_const_constructors
       child: AnnotatedRegion<SystemUiOverlayStyle>(
-        value: SystemUiOverlayStyle(
+        value: const SystemUiOverlayStyle(
           statusBarColor: Colors.white,
           statusBarBrightness: Brightness.dark,
           statusBarIconBrightness: Brightness.dark,
         ),
-        child: MaterialApp(
+        child: const MaterialApp(
           debugShowCheckedModeBanner: false,
           onGenerateRoute: RouteGenerator.getRoute,
           initialRoute: Routes.splashRoute,
